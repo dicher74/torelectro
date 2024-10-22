@@ -30,9 +30,10 @@ export default {
 	methods: {
 		select(index) {
 			for (let filterNum = 0; filterNum < this.filters.length; filterNum++) {
+				if (filterNum === index) continue;
 				this.filters[filterNum].selected = false
 			}
-			this.filters[index].selected = true
+			this.filters[index].selected = !this.filters[index].selected
 		}
 	},
 }
