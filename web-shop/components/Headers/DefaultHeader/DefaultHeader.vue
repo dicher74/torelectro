@@ -1,28 +1,61 @@
 <template>
-	<header class="default-header">
-		<div class="default-header__body"> </div>
-		<div class="default-header__navigation">
-			<HeaderCallButton />
-			<HeaderMenu />
-		</div>
-	</header>
+	<div class="default-header-with-select">
+		<header class="default-header">
+			<div class="default-header__body"> </div>
+			<div class="default-header__navigation">
+				<HeaderCallButton />
+				<HeaderMenu @click="changeMenuMode($event)" :show-list="menuMode"/>
+			</div>
+		</header>
+		<MenuSelect v-if="menuMode" style="align-self: flex-end;"/>
+	</div>
 </template>
 
-<script lang="ts">
+<script>
 import HeaderCallButton from './components/HeaderCallButton.vue';
 import HeaderMenu from './components/HeaderMenu.vue';
+import MenuSelect from './components/MenuSelect.vue';
 
 export default {
 	components: {
 		HeaderCallButton,
 		HeaderMenu,
+		MenuSelect,
+	},
+
+	data() {
+		return {
+			menuMode: true,
+		}
+	},
+
+	methods: {
+		changeMenuMode(event) {
+			this.menuMode = !this.menuMode
+			event.stopPropagation()
+		},
+		closeMenu() {
+			this.menuMode = false
+		}
+	},
+
+	mounted() {
+		window.addEventListener('click', this.closeMenu)
+	},
+
+	destroyed() {
+		window.removeEventListener('click', this.closeMenu)
 	}
 }
 </script>
 
 <style scoped lang="scss">
-.default-header{
+.default-header-with-select {
 	width: 100%;
+	display: inline-flex;
+	flex-direction: column;
+}
+.default-header{
 	box-sizing: border-box;
 	display: inline-flex;
 	flex-direction: row;
