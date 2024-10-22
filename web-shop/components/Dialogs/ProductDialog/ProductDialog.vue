@@ -4,23 +4,25 @@
 			<nav class="navigation__options">
 				<NavButton 
 					v-for="(_, key) in card.varieties" 
+					@click="changeVariety(key)"
 					:key="`nav-button_num-${key}`"
 					:text="key"
 					:active="key === currentVariety" />
 			</nav>
-			<img class="navigation__scroll" src="~assets/images/scroll-arrow.svg"/>
+			<img class="navigation__scroll" src="~assets/images/scroll-arrow.svg" @click="showNextCard"/>
 		</div>
 		<div class="dialog-window__product">
 			<div class="product__image"></div>
 			<div class="product__description">
 				<div class="product-description__title">
 					<p class="product-description__title-header"> название товара </p>
-					<p class="product-description__title-item"> {{ card.title }} </p>
+					<p class="product-description__title-item"> {{ card.fullTitle }} </p>
 				</div>
 				<div class="product-description__short-description">
 					<p class="product-description__short-description-header"> краткое описание категории товара </p>
 					<p class="product-description__short-description-item"> {{ card.description }} </p>
 				</div>
+				<ProductTable :current-variety="currentVariety" :current-product="card"/>
 				<p class="disclaimer"> 
 					вся информация о товарах и об услугах, носит исключительно информационный характер 
 				</p>
@@ -32,18 +34,30 @@
 
 <script>
 import NavButton from './NavButton.vue';
+import ProductTable from './ProductTable.vue';
 import { store } from '~/store';
 
 export default {
 	components: {
+		ProductTable,
 		NavButton,
+	},
+	data() {
+		return {
+			currentVariety: Object.keys(store.state.currentProduct.varieties)[0],
+		}
 	},
 	computed: {
 		card() {
 			return store.state.currentProduct
 		},
-		currentVariety() {
-			return store.state.currentProduct.currentVariety
+	},
+	methods: {
+		changeVariety(key) {
+			this.currentVariety = key
+		},
+		showNextCard() {
+			store.commit('showNextCard')
 		}
 	}
 }
@@ -57,6 +71,7 @@ export default {
 .navigation__scroll {
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 .dialog-window {
 	&__content {
@@ -105,18 +120,20 @@ export default {
 }
 
 .product-description__title {
-	&-heder {
+	&-header {
+		white-space: nowrap;
 		font-size: 14px;
 		color: #909090;
 	}
 	&-item {
+		white-space: nowrap;
 		font-size: 18px;
 		white-space: pre-line;
 	}
 }
 
 .product-description__short-description {
-	&-heder {
+	&-header {
 		font-size: 14px;
 		color: #909090;
 	}
@@ -128,5 +145,6 @@ export default {
 }
 .disclaimer {
 	margin-top: auto;
+	white-space: nowrap;
 }
 </style>
