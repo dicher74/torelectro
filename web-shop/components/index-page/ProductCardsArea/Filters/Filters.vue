@@ -5,7 +5,8 @@
 				v-for="filter, filterNum in filters" 
 				:key="`filter-button_num-${filterNum}`" 
 				:text="filter.text"
-				:selected="false" />
+				:selected="filter.selected" 
+				@click="select(filterNum)"/>
 		</nav>
 	<img class="filter-toolbar__scroll-arrow" src="~assets/images/scroll-arrow.svg" />
 	</div>
@@ -21,11 +22,19 @@ export default {
 	data() {
 		return {
 			filters: [
-				{text: 'У-ПВС'},
-				{text: 'У-КГ'},
+				{text: 'У-ПВС', selected: false},
+				{text: 'У-КГ', selected: false},
 			]
 		}
-	}
+	},
+	methods: {
+		select(index) {
+			for (let filterNum = 0; filterNum < this.filters.length; filterNum++) {
+				this.filters[filterNum].selected = false
+			}
+			this.filters[index].selected = true
+		}
+	},
 }
 </script>
 

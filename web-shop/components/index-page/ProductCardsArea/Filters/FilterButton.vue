@@ -21,6 +21,7 @@ export default {
 
 <style scoped lang="scss">
 .filter-button {
+	cursor: pointer;
 	width: 200px;
 	height: 50px;
 
@@ -35,6 +36,8 @@ export default {
 	background: #FFFFFF;
 	border: none;
 	border-radius: 5px;
+
+	transition: background-color 1s;
 
 	&_selected {
 		background: #FF3D00; 
