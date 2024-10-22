@@ -1,21 +1,24 @@
 <template>
 	<div class="product-cards">
-		<ProductCard
-			v-for="card, cardNum in currentCards" 
-			:key="`product-card_num-${cardNum}`"
-			:description="card" />
+		<div class="product-cards__container" :style="`transform: translate(${translateX}px, 0)`">
+			<ProductCard
+				v-for="card, cardNum in currentCards" 
+				:key="`product-card_num-${cardNum}`"
+				:description="card" />
+		</div>
 	</div>
 </template>
 
 <script>
 import ProductCard from './ProductCard.vue';
+import { store } from '~/store'
 
 export default {
 	components: {
 		ProductCard,
 	},
 	props: {
-		startCard: {
+		firstCard: {
 			type: Number,
 			default: 0,
 		}
@@ -24,28 +27,14 @@ export default {
 	data() {
 		return {
 			cardsAmount: 3,
-			cards: [
-				{
-					title: 'Удлинители в бухте · без заземления',
-					options: [
-						{name: 'сеченик кабеля', value: '2х1,0 · 2х1,5 · 2х2,5'},
-						{name: 'длина кабеля', value: 'от 10 до 50 метров'},
-						{name: 'защита кабеля', value: 'IP44 · крышка на розетке'}
-					],
-				},
-				{
-					title: 'Удлинители в бухте · без заземления',
-					options: [
-						{name: 'сеченик кабеля', value: '2х1,0 · 2х1,5 · 2х2,5'},
-						{name: 'длина кабеля', value: 'от 10 до 50 метров'},
-						{name: 'защита кабеля', value: 'IP44 · крышка на розетке'}
-					],
-				},
-			]
+			cards: store.state.productCards
 		}
 	},
 
 	computed: {
+		translateX() {
+			return this.firstCard * (-400);
+		},
 		currentCards() {
 			return this.cards
 		}
@@ -55,7 +44,12 @@ export default {
 
 <style scoped>
 .product-cards {
+	width: 100%;
+	overflow: hidden;
+}
+.product-cards__container {
 	display: inline-flex;
 	gap: 20px;
+	transition: all 1s;
 }
 </style>

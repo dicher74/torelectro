@@ -12,12 +12,13 @@
 				</p>
 			</div>
 		</div>
-		<OrangeButton text="Посмотреть" :width="340" :height="60" style="margin-top: 22px;"/>
+		<OrangeButton text="Посмотреть" :width="340" :height="60" style="margin-top: 22px;" @click="showCard"/>
 	</div>
 </template>
 
 <script>
 import OrangeButton from '~/components/Buttons/OrangeButton.vue';
+import { store } from '~/store';
 
 export default {
 	components: {
@@ -27,6 +28,11 @@ export default {
 		description: {
 			type: Object,
 			default: () => {},
+		}
+	},
+	methods: {
+		showCard() {
+			store.dispatch('changeDialogModeAsync', {mode: 'product', card: this.description})
 		}
 	}
 }

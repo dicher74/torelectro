@@ -9,7 +9,7 @@
 				:hint="filter.hint"
 				@click="select(filterNum)"/>
 		</nav>
-	<img class="filter-toolbar__scroll-arrow" src="~assets/images/scroll-arrow.svg" />
+	<img class="filter-toolbar__scroll-arrow" @click="scrollNext" src="~assets/images/scroll-arrow.svg" />
 	</div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
 				this.filters[filterNum].selected = false
 			}
 			this.filters[index].selected = !this.filters[index].selected
+		},
+		scrollNext() {
+			this.$emit('scrollNext')
 		}
 	},
 }
@@ -60,6 +63,7 @@ export default {
 	&__scroll-arrow {
 		display: flex;
 		justify-self: end;
+		cursor: pointer;
 	}
 }
 </style>

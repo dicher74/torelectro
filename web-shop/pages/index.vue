@@ -8,9 +8,12 @@
 	<PopularQuestionsArea />
 	<InterestingNuansionsArea />
 	<DefaultFooter />
+
+	<Dialog v-if="dialogMode" />
 </template>
 
 <script>
+import Dialog from '~/components/Dialogs/Dialog.vue';
 import DefaultFooter from '~/components/Footers/DefaultFooter/DefaultFooter.vue';
 import DefaultHeader from '~/components/Headers/DefaultHeader/DefaultHeader.vue';
 import CompanyInformation from '~/components/index-page/CompanyInformation/CompanyInformation.vue';
@@ -20,6 +23,7 @@ import PageMainInformation from '~/components/index-page/PageMainInformation/Pag
 import PopularQuestionsArea from '~/components/index-page/PopularQuestionsArea/PopularQuestionsArea.vue';
 import PresentationBanner from '~/components/index-page/PresentationBanner/PresentationBanner.vue';
 import ProductCardsArea from '~/components/index-page/ProductCardsArea/ProductCardsArea.vue';
+import { store } from '~/store';
 
 export default {
 	components: {
@@ -32,8 +36,15 @@ export default {
 		PopularQuestionsArea,
 		InterestingNuansionsArea,
 		DefaultFooter,
+		Dialog,
 	},
 
 	layout: "default",
+
+	computed: {
+		dialogMode() {
+			return store.state.dialogMode
+		}
+	}
 }
 </script>

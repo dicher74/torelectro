@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'Квантладия',
+      title: 'Tor Electro',
       htmlAttrs: {
         lang: 'en',
       },

@@ -6,17 +6,6 @@
 	</div>
 </template>
 
-<script>
-export default {
-	props: {
-		showList: {
-			type: Boolean,
-			default: false,
-		}
-	}
-}
-</script>
-
 <style scoped>
 .navigation-menu {
 	display: inline-flex;

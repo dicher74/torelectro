@@ -27,6 +27,7 @@ export default {
 	flex-direction: column;
 
 	padding: 50px 20px;
+	border-radius: 5px;
 
 	&__description {
 		white-space: pre-line;

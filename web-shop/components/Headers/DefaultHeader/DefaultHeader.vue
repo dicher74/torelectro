@@ -25,7 +25,7 @@ export default {
 
 	data() {
 		return {
-			menuMode: true,
+			menuMode: false,
 		}
 	},
 

@@ -1,8 +1,8 @@
 <template>
 	<section class="product-cards-area">
 		<DefaultSectionHeader :text="title" />
-		<Filters />
-		<ProductCards />
+		<Filters @scrollNext="scrollNext"/>
+		<ProductCards :firstCard="firstCard"/>
 	</section>
 </template>
 
@@ -10,6 +10,8 @@
 import DefaultSectionHeader from '~/components/SectionHeaders/DefaultSectionHeader.vue';
 import Filters from './Filters/Filters.vue';
 import ProductCards from './ProductCards/ProductCards.vue';
+
+import { store } from "~/store"
 
 export default {
 	components: {
@@ -20,8 +22,14 @@ export default {
 	data() {
 		return {
 			title: "Каталог со всеми категориями нашего ассортимента",
+			firstCard: 0,
 		}
-	}
+	},
+	methods: {
+		scrollNext() {
+			this.firstCard = (this.firstCard + 1) % store.state.productCards.length
+		},
+	},
 }
 </script>
 
