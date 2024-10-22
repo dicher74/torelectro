@@ -1,3 +1,11 @@
 body {
 	margin: 0;
+	font-family: Evolventa;
+	font-weight: 400;
+}
+
+body * {
+	margin: 0;
+	padding: 0;
+	color: #101010
 }

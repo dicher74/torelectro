@@ -34,8 +34,17 @@ export default {
 	font-family: Evolventa;
 	font-weight: 400;
 
-	background: #FF3D00;
+	background-color: #FF3D00;
 	border: none;
 	border-radius: 5px;
+
+	cursor: pointer;
+	transition: background-color 0.6s;
+}
+
+@media screen and (min-width: 1280px) {
+	.orange-button:hover {
+			background-color: darkred;
+		}
 }
 </style>
