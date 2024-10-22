@@ -1,11 +1,19 @@
 <template>
-	<div :class="['filter-button', selected ? 'filter-button_selected' : '']">
-		{{ text }}
+	<div class="filter-button-with-hint">
+		<FilterHint v-if="hintMode" :text="hint" />
+		<div @mouseover="showHint" @mouseout="hideHint" :class="['filter-button', selected ? 'filter-button_selected' : '']">
+			{{ text }}
+		</div>
 	</div>
 </template>
 
 <script>
+import FilterHint from './FilterHint.vue';
+
 export default {
+	components: {
+		FilterHint,
+	},
 	props: {
 		text: {
 			type: String,
@@ -14,12 +22,36 @@ export default {
 		selected: {
 			type: Boolean,
 			default: false,
+		},
+		hint: {
+			type: String,
+			default: '',
+		},
+	},
+
+	data() {
+		return {
+			hintMode: false,
 		}
-	}
+	},
+
+	methods: {
+		showHint() {
+			console.log('show')
+			this.hintMode = true;
+		},
+		hideHint() {
+			this.hintMode = false;
+		}
+	},
 }
 </script>
 
 <style scoped lang="scss">
+.filter-button-with-hint {
+	display: inline-flex;
+	flex-direction: column;
+}
 .filter-button {
 	cursor: pointer;
 	width: 200px;

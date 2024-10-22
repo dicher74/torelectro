@@ -6,6 +6,7 @@
 				:key="`filter-button_num-${filterNum}`" 
 				:text="filter.text"
 				:selected="filter.selected" 
+				:hint="filter.hint"
 				@click="select(filterNum)"/>
 		</nav>
 	<img class="filter-toolbar__scroll-arrow" src="~assets/images/scroll-arrow.svg" />
@@ -22,8 +23,13 @@ export default {
 	data() {
 		return {
 			filters: [
-				{text: 'У-ПВС', selected: false},
-				{text: 'У-КГ', selected: false},
+				{text: 'У-ПВС', selected: false, 
+					hint: `удлинители с проводом 
+							виниловым соединительным`},
+				{text: 'У-КГ', selected: false,
+					hint: `удлинители с кабелем
+							гибким`
+				},
 			]
 		}
 	},
