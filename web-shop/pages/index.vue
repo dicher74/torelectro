@@ -1,11 +1,11 @@
 <template>
 	<DefaultHeader />
 	<PageMainInformation />
-	<ProductCardsArea />
-	<PresentationBanner />
-	<CompanyInformation />
+	<ProductCardsArea id="catalog" />
+	<PresentationBanner id="presentation" />
+	<CompanyInformation id="information" />
 	<ConsultationBanner />
-	<PopularQuestionsArea />
+	<PopularQuestionsArea id="questions" />
 	<InterestingNuansionsArea />
 	<DefaultFooter />
 

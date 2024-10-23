@@ -1,10 +1,10 @@
 <template>
 	<nav class="select-list">
 		<div class="select-list__section">
-			<a class="select-list__tip"> Каталог всего ассортимента компании </a>
-			<a class="select-list__tip"> Презентация для сотрудничества</a>
-			<a class="select-list__tip"> Информация о компании </a>
-			<a class="select-list__tip"> Популярные вопросы </a>
+			<a class="select-list__tip" href="#catalog"> Каталог всего ассортимента компании </a>
+			<a class="select-list__tip" href="#presentation"> Презентация для сотрудничества</a>
+			<a class="select-list__tip" href="#information"> Информация о компании </a>
+			<a class="select-list__tip" href="#questions"> Популярные вопросы </a>
 		</div>
 		<hr />
 		<div class="select-list__section">
@@ -33,6 +33,29 @@
 		display: inline-flex;
 		flex-direction: column;
 		gap: 10px;
+	}
+
+	&__tip {
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.select-list__tip:hover {
+		text-decoration: underline;
+		&:before {
+			content: '';
+      		display: inline-block;
+			width: 7px;
+			height: 7px;
+			border-radius: 3.5px;
+			margin-left: -20px;
+			margin-top: 8px;
+			background-color: #FF3D00;
+			text-decoration: none;
+			position: absolute;
+		}
 	}
 }
 
