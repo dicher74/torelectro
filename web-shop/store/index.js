@@ -5,8 +5,10 @@ export const store = createStore({
 	mutations: {
 		changeDialogMode(state, payload) {
 			state.dialogMode = payload.mode
-			state.currentProduct = payload.card
-			state.currentVariety = Object.keys(payload.card.varieties)[0]
+			if (payload.mode === 'product') {
+				state.currentProduct = payload.card
+				state.currentVariety = Object.keys(payload.card.varieties)[0]
+			}
 		},
 		closeDialog(state) {
 			state.dialogMode = false

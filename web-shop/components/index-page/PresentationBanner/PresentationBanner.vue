@@ -2,11 +2,13 @@
 	<BlackBanner 
 		:buttonText="buttonText" 
 		:description="description" 
+		@activated="showPresentationDialog"
 		style="margin-top: 100px;"/>
 </template>
 
 <script>
 import BlackBanner from '~/components/Banners/BlackBanner.vue';
+import { store } from '~/store';
 
 export default {
 	components: {
@@ -22,6 +24,11 @@ export default {
 				<span style='color: #FF3D00;'>смело скачивайте презентацию</span>`,
 			buttonText: "Подробная презентация",
 		}
-	}
+	},
+	methods: {
+		showPresentationDialog() {
+			store.commit('changeDialogMode', { mode: 'presentation' })
+		},
+	},
 }
 </script>

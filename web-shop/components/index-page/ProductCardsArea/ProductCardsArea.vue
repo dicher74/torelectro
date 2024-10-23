@@ -28,7 +28,10 @@ export default {
 	methods: {
 		scrollNext() {
 			const filterName = store.state.filter
-			const cards = store.state.productCards.filter((elem) => elem.category === filterName)
+			let cards = store.state.productCards
+			if (filterName) {
+				cards = store.state.productCards.filter((elem) => elem.category === filterName)
+			}
 			this.firstCard = (this.firstCard + 1) % cards.length
 		},
 		changeFilter() {

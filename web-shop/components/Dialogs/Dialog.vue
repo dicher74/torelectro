@@ -6,6 +6,7 @@
 					@click="closeDialog"/>
 				<div class="dialog__window">
 					<ProductDialog v-if="dialogMode === 'product'" />
+					<PresentationDialog v-if="dialogMode === 'presentation'" />
 				</div>
 			</div>
 		</div>
@@ -15,10 +16,12 @@
 <script>
 import { store } from '~/store';
 import ProductDialog from './ProductDialog/ProductDialog.vue';
+import PresentationDialog from './PresentationDialog/PresentationDialog.vue';
 
 export default {
 	components: {
 		ProductDialog,
+		PresentationDialog,
 	},
 	data() {
 		return {
@@ -52,6 +55,8 @@ export default {
 	background-color: #FFFFFF;
 	padding: 20px;
 	border-radius: 5px;
+	width: 1180px;
+	box-sizing: border-box;
 }
 
 .dialog__window-container {
