@@ -1,6 +1,6 @@
 <template>
 	<section class="popular-questions-area">
-		<DefaultSectionHeader text="Интересные нюансы, которые важно знать вашим клиентам"/>
+		<DefaultSectionHeader text="Популярные вопросы, которыми часто задаются наши клиенты"/>
 		<InformationDropList :items="items" theme="white" />
 	</section>
 </template>

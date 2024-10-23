@@ -39,12 +39,12 @@ export default {
 		background-color: #101010;
 		width: 100vw;
 		height: 310px;
-		position: absolute;
-		left: 0;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
 	}
 	&__content {
-		z-index: 1;
-		padding: 50px;
+		position: absolute;
+		align-self: center;
 		padding-left: 0;
 		display: inline-flex;
 		flex-direction: column;
