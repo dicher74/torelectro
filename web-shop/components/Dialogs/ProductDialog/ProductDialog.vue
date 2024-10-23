@@ -9,7 +9,13 @@
 					:text="key"
 					:active="key === currentVariety" />
 			</nav>
-			<img class="navigation__scroll" src="~assets/images/scroll-arrow.svg" @click="showNextCard"/>
+			<div class="navigation-scroll">
+				<ScrollHint v-if="hintMode"/>
+				<img class="navigation-scroll__image" src="~assets/images/scroll-arrow.svg" 
+					@mouseover="showHint"
+					@mouseout="hideHint"
+					@click="showNextCard"/>
+			</div>
 		</div>
 		<div class="dialog-window__product">
 			<div class="product__image"></div>
@@ -48,12 +54,19 @@
 <script>
 import NavButton from './NavButton.vue';
 import ProductTable from './ProductTable.vue';
+import ScrollHint from './ScrollHint.vue';
 import { store } from '~/store';
 
 export default {
 	components: {
 		ProductTable,
 		NavButton,
+		ScrollHint,
+	},
+	data() {
+		return {
+			hintMode: false,
+		}
 	},
 	computed: {
 		card() {
@@ -75,6 +88,12 @@ export default {
 		},
 		showNextCard() {
 			store.commit('showNextCard')
+		},
+		showHint() {
+			this.hintMode = true
+		},
+		hideHint() {
+			this.hintMode = false
 		}
 	}
 }
@@ -85,10 +104,16 @@ export default {
 	display: inline-flex;
 	gap: 10px;
 }
-.navigation__scroll {
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
+.navigation-scroll {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	&__image {
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
 }
 .dialog-window {
 	&__content {
