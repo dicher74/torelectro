@@ -5,7 +5,7 @@
 			<div class="main-information__body">
 				<p class="body__text"> {{ body }} </p>
 			</div>
-			<OrangeButton 
+			<OrangeButton @click="showConsultationDialog"
 				:text="buttonText" 
 				:width="380" 
 				:height="60" />
@@ -18,6 +18,7 @@
 
 <script>
 import OrangeButton from '~/components/Buttons/OrangeButton.vue';
+import { store } from '~/store';
 
 export default {
 	components: {
@@ -42,6 +43,11 @@ export default {
 			extraInfo: 
 				`бесплатная доставка от 50000 рублей
 				во все населённые пункты нашей стран`,
+		}
+	},
+	methods: {
+		showConsultationDialog() {
+			store.commit('changeDialogMode', {mode: 'consultation'})
 		}
 	}
 }

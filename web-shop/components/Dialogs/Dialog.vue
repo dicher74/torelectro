@@ -7,6 +7,7 @@
 				<div class="dialog__window">
 					<ProductDialog v-if="dialogMode === 'product'" />
 					<PresentationDialog v-if="dialogMode === 'presentation'" />
+					<ConsultationDialog v-if="dialogMode === 'consultation'" />
 				</div>
 			</div>
 		</div>
@@ -17,15 +18,17 @@
 import { store } from '~/store';
 import ProductDialog from './ProductDialog/ProductDialog.vue';
 import PresentationDialog from './PresentationDialog/PresentationDialog.vue';
+import ConsultationDialog from './ConsultationDialog/ConsultationDialog.vue';
 
 export default {
 	components: {
 		ProductDialog,
 		PresentationDialog,
+		ConsultationDialog,
 	},
-	data() {
-		return {
-			dialogMode: store.state.dialogMode
+	computed: {
+		dialogMode() {
+			return store.state.dialogMode
 		}
 	},
 	methods: {
@@ -57,6 +60,8 @@ export default {
 	border-radius: 5px;
 	width: 1180px;
 	box-sizing: border-box;
+	display: inline-flex;
+	justify-content: center;
 }
 
 .dialog__window-container {
