@@ -6,7 +6,7 @@
 			<a class="select-list__tip" href="#information"> Информация о компании </a>
 			<a class="select-list__tip" href="#questions"> Популярные вопросы </a>
 		</div>
-		<hr />
+		<hr class="select-list__separator"/>
 		<div class="select-list__section">
 			<a class="select-list__tip"> Необходимая документация </a>
 			<a class="select-list__tip"> Контактная информация </a>
@@ -28,6 +28,13 @@
 	overflow: hidden;
 
 	background-color: #FFFFFF;
+
+	&__separator {
+		outline: none;
+		border: 0.5px #F0F0F0 solid;
+		border-radius: 0.5px;
+		margin-right: -20px;
+	}
 
 	&__section {
 		display: inline-flex;
