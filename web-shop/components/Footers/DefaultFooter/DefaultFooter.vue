@@ -72,6 +72,8 @@
 	&__disclaimer {
 		white-space: pre-line;
 		color: #505050;
+		line-height: 17.6px;
+		height: 35px;
 	}
 	&__extra-information {
 		display: inline-flex;
@@ -100,16 +102,21 @@
 	&__item {
 		font-size: 16px;
 		color: #909090;
+		line-height: 17.6px;
+		height: 20px;
 	}
 
 	&__item_last {
 		font-size: 18px;
 		color: #FFFFFF;
+		line-height: 19.8px;
 	}
 }
 
 .extra-information__item {
 	color: #505050;
+	line-height: 17.6px;
+	height: 20px;
 
 	&_num-2 {
 		position: absolute;
