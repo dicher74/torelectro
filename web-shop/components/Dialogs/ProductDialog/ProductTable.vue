@@ -45,6 +45,11 @@
 					product-table__item_usual_odd-${rowNum % 2}`">
 					{{ grounding }}
 			</div>
+			<div :class="`
+					product-table__item
+					product-table__item_basket`">
+				<img class="basket-image" src="~assets/images/basket.svg" />
+			</div>
 		</template>
 	</div>
 </template>
@@ -115,11 +120,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.basket-image {
+	width: 15px;
+	height: 15px;
+}
 .product-table {
 	display: grid;
 	column-gap: 5px;
 	row-gap: 10px;
-	grid-template-columns: 45px 60px 60px 60px 80px 130px 130px;
+	grid-template-columns: 45px 60px 60px 60px 80px 130px 130px 50px;
 
 	&__item {
 		height: 50px;
@@ -140,6 +149,9 @@ export default {
 	&__item_id {
 		background-color: rgba(245, 245, 245, 1);
 		color: rgba(144, 144, 144, 1);
+	}
+	&__item_basket {
+		background-color: #FF3D00;
 	}
 	&__item_red_odd-1 {
 		background-color: rgba(255, 236, 229, 0.5);

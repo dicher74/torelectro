@@ -42,7 +42,8 @@ export default {
 		opacity: 1;
 	}
 	&__value {
-		font-size: 16px	;
+		font-size: 16px;
+		-webkit-text-stroke: 0.25px #FFFFFF;
 		color: #FFFFFF;
 	}
 	&__description {

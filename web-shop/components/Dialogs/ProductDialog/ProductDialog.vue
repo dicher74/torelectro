@@ -123,11 +123,13 @@ export default {
 	&-header {
 		white-space: nowrap;
 		font-size: 14px;
+		line-height: 15.4px;
 		color: #909090;
 	}
 	&-item {
 		white-space: nowrap;
 		font-size: 18px;
+		line-height: 19.8px;
 		white-space: pre-line;
 	}
 }
@@ -136,15 +138,20 @@ export default {
 	&-header {
 		font-size: 14px;
 		color: #909090;
+		line-height: 15.4px;
 	}
 	&-item {
 		font-size: 16px;
 		color: #505050;
 		white-space: pre-line;
+		line-height: 17.6px;
 	}
 }
 .disclaimer {
 	margin-top: auto;
 	white-space: nowrap;
+	font-size: 14px;
+	line-height: 15.4px;
+	color: #909090
 }
 </style>
