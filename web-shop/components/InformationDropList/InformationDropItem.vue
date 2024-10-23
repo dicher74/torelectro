@@ -10,6 +10,9 @@
 					:key="`description-par_num-${descriptionParNum}`">
 					{{ descriptionPar }}
 				</p>
+				<p v-if="theme === 'black'" class="information-drop-item__message">
+					Написать нам в мессенджер «Telegram»
+				</p>
 			</div>
 		</div>
 		<img :class="`information-drop-item__show-button information-drop-item__show-button_show-${showMode}`" 
@@ -52,13 +55,14 @@ export default {
 	height: 60px;
 	box-sizing: border-box;
 	display: inline-flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	padding: 20px;
 	border-radius: 5px;
 	font-size: 18px;
 	overflow: hidden;
 	transition: height 1s;
+	user-select: none;
 
 	&_show-true {
 		height: auto;
@@ -78,10 +82,16 @@ export default {
 		gap: 20px;
 	}
 	&__content-separator_theme-white {
-		color: #F0F0F0;
-		width: 1100px;
+		width: 1160px;
+		border: 1px solid #F0F0F0;
+	}
+	&__content-separator_theme-black {
+		width: 1160px;
+		border: 1px solid #505050;
 	}
 	&__show-button {
+		position: absolute;
+		align-self: end;
 		width: 24.38px;
 		height: 24.38px;
 		cursor: pointer;
@@ -90,6 +100,11 @@ export default {
 		transform: rotate(45deg);
 		animation-name: rotate;
 		animation-duration: 0.3s;
+	}
+	&__message {
+		font-size: 16px;
+		color: #FF3D00;
+		line-height: 17.6px;
 	}
 }
 
@@ -110,9 +125,11 @@ export default {
 .information-drop-item__description-par {
 	&_theme-black {
 		color: #909090;
+		line-height: 19.8px;
 	}
 	&_theme-white {
 		color: #505050;
+		line-height: 19.8px;
 	}
 }
 

@@ -1,12 +1,23 @@
 <template>
 	<div class="navigation-menu-with-select">
-		<div class="navigation-menu">
+		<div :class="`navigation-menu navigation-menu_activation-${activated}`">
 			<img class="navigation-menu__image" src="~assets/images/Menu.svg" />
 		</div>
 	</div>
 </template>
 
-<style scoped>
+<script>
+export default {
+	props: {
+		activated: {
+			type: Boolean,
+			default:false
+		}
+	}
+}
+</script>
+
+<style scoped lang="scss">
 .navigation-menu {
 	display: inline-flex;
 	justify-content: center;
@@ -16,5 +27,10 @@
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
+	transition: background-color 0.3s;
+
+	&_activation-true {
+		background-color: rgba(255, 61, 0, 0.75);
+	}
 }
 </style>

@@ -4,7 +4,7 @@
 			<div class="default-header__body"> </div>
 			<div class="default-header__navigation">
 				<HeaderCallButton />
-				<HeaderMenu @click="changeMenuMode($event)" :show-list="menuMode"/>
+				<HeaderMenu @click="changeMenuMode($event)" :show-list="menuMode"  :activated="menuMode"/>
 			</div>
 		</header>
 		<MenuSelect v-if="menuMode" style="align-self: flex-end;"/>
