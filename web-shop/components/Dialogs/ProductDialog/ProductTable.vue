@@ -105,7 +105,7 @@ export default {
 		},
 		amount() {
 			const amount = this.currentProduct.amount
-			return this.langForm(amount) + ' ' + amount;
+			return amount + ' ' + this.langForm(amount);
 		}
 	},
 	methods: {

@@ -14,15 +14,28 @@
 		<div class="dialog-window__product">
 			<div class="product__image"></div>
 			<div class="product__description">
-				<div class="product-description__title">
-					<p class="product-description__title-header"> название товара </p>
-					<p class="product-description__title-item"> {{ card.fullTitle }} </p>
+				<div class="product-description__title-with-tags"> 
+					<div class="product-description__title">
+						<p class="product-description__title-header"> название товара </p>
+						<p class="product-description__title-item"> {{ card.fullTitle }} </p>
+					</div>
+					<div class="product-description__tags">
+						<div 
+							v-for="tag, tagNum in tags" 
+							:key="`tag_num-${tagNum}`"
+							class="product-description__tag_usual product-description__tag"> 
+							{{ tag }} 
+						</div>
+					</div>
 				</div>
 				<div class="product-description__short-description">
 					<p class="product-description__short-description-header"> краткое описание категории товара </p>
 					<p class="product-description__short-description-item"> {{ card.description }} </p>
 				</div>
-				<ProductTable :current-variety="currentVariety" :current-product="card"/>
+				<div v-if="qualityTag" class="product-description__tag_quality product-description__tag">
+					{{ qualityTag }}
+				</div>
+				<ProductTable style="margin-top: 10px;" :current-variety="currentVariety" :current-product="card"/>
 				<p class="disclaimer"> 
 					вся информация о товарах и об услугах, носит исключительно информационный характер 
 				</p>
@@ -42,19 +55,23 @@ export default {
 		ProductTable,
 		NavButton,
 	},
-	data() {
-		return {
-			currentVariety: Object.keys(store.state.currentProduct.varieties)[0],
-		}
-	},
 	computed: {
 		card() {
-			return store.state.currentProduct
+			return store.state.currentProduct;
 		},
+		currentVariety() {
+			return store.state.currentVariety;
+		},
+		qualityTag() {
+			return this.card.qualityTag;
+		},
+		tags() {
+			return this.card.tags
+		}
 	},
 	methods: {
 		changeVariety(key) {
-			this.currentVariety = key
+			store.commit('changeVariety', key)
 		},
 		showNextCard() {
 			store.commit('showNextCard')
@@ -107,6 +124,16 @@ export default {
 }
 
 .product-description {
+	&__title-with-tags {
+		width: 100%;
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	&__tags {
+		display: inline-flex;
+		gap: 5px;
+	}
 	&__title {
 		display: inline-flex;
 		flex-direction: column;
@@ -116,6 +143,22 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 5px;
+	}
+	&__tag {
+		background-color: #FF3D00;
+		border-radius: 5px;
+		padding: 0px 10px;
+		height: 30px;
+		box-sizing: border-box;
+		display: inline-flex;
+		align-items: center;
+		color: #FFFFFF;
+		font-size: 14px;
+		user-select: none;
+	}
+	&__tag_quality {
+		-webkit-text-stroke: 0.25px #FFFFFF;
+		width: 325px;
 	}
 }
 

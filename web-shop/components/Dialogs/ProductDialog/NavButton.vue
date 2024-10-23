@@ -39,6 +39,7 @@ export default {
 	cursor: pointer;
 
 	&_active-true {
+		animation: activate 1s;
 		opacity: 1;
 	}
 	&__value {
@@ -49,6 +50,14 @@ export default {
 	&__description {
 		font-size: 14px;
 		color: rgba(255, 255, 255, 0.5);
+	}
+}
+@keyframes activate {
+	from {
+		opacity: 0.5;
+	}
+	to {
+		opacity: 1;
 	}
 }
 </style>

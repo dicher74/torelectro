@@ -6,15 +6,19 @@ export const store = createStore({
 		changeDialogMode(state, payload) {
 			state.dialogMode = payload.mode
 			state.currentProduct = payload.card
+			state.currentVariety = Object.keys(payload.card.varieties)[0]
 		},
 		closeDialog(state) {
 			state.dialogMode = false
 		},
 		showNextCard(state) {
-			console.log('show next card')
 			const currentId = state.currentProduct.id
 			const cardAmount = state.productCards.length
 			state.currentProduct = state.productCards[currentId % cardAmount]
+			state.currentVariety = Object.keys(state.currentProduct.varieties)[0]
+		},
+		changeVariety(state, key) {
+			state.currentVariety = key
 		}
 	},
 	actions: {
@@ -26,6 +30,7 @@ export const store = createStore({
 		return {
 			dialogMode: null,
 			currentProduct: null,
+			currentVariety: null,
 			productCards: [
 				{
 					id: 1,
@@ -417,8 +422,7 @@ export const store = createStore({
 						{name: 'защита кабеля', value: 'с заземлением'}
 					],
 					description: 
-						`Удлинители силовые с кабелем гибким и холодостойким, по «ЭКО»,
-						на пластиковой катушке с держателями и удобным местом наматывания,
+						`Удлинители силовые с кабелем гибким и холодостойким, в бухте,
 						с заземлением, со степенью защиты «IP44» (каучуковая розетка и крышка),
 						с европейской вилкой «16А», с поддержанием напряжения сети в «220В»`,
 					varieties: {
