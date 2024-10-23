@@ -64,6 +64,7 @@ export default {
 	&__title {
 		font-size: 18px;
 		font-weight: 400;
+		-webkit-text-stroke: 0.25px #101010;
 	}
 	&__options {
 		display: inline-flex;

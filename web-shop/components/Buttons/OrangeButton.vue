@@ -1,6 +1,6 @@
 <template>
 	<button class="orange-button" :style="`height: ${height}px; width: ${width}px`">
-		{{ text }}
+		<p class="orange-button__text">{{ text }}</p>
 	</button>
 </template>
 
@@ -23,16 +23,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .orange-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-
-	color: #FFFFFF;
-	font-size: 18px;
-	font-family: Evolventa;
-	font-weight: 400;
 
 	background-color: #FF3D00;
 	border: none;
@@ -40,6 +35,14 @@ export default {
 
 	cursor: pointer;
 	transition: background-color 0.6s;
+
+	&__text {
+		color: #FFFFFF;
+		font-size: 18px;
+		font-family: Evolventa;
+		font-weight: 400;
+		-webkit-text-stroke: 0.25px #FFFFFF;
+	}
 }
 
 @media screen and (min-width: 1280px) {

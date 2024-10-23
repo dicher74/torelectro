@@ -1,3 +1,19 @@
+@font-face {
+	font-family: 'Evolventa';
+	src: url('../fonts/Evolventa/Evolventa-Regular.ttf') format('truetype'), 
+		url('../fonts/Evolventa/Evolventa-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Evolventa';
+	src: url('../fonts/Evolventa/Evolventa-Bold.ttf') format('truetype'),
+		url('../fonts/Evolventa/Evolventa-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
 body {
 	margin: 0;
 	font-family: Evolventa;
