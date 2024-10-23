@@ -45,10 +45,12 @@ export default {
 	padding: 20px;
 	background-color: #FFFFFF;
 	border-radius: 5px;
+	height: 580px;
+	box-sizing: border-box;
 
 	&__image {
 		width: 340px;
-		height: 340px;
+		min-height: 340px;
 		background-color: #F0F0F0;
 		border-radius: 5px;
 	}
@@ -63,6 +65,8 @@ export default {
 .description {
 	&__title {
 		font-size: 18px;
+		line-height: 19.8px;
+		height: 20px;
 		font-weight: 400;
 		-webkit-text-stroke: 0.25px #101010;
 	}
@@ -74,7 +78,9 @@ export default {
 }
 
 .description-option {
+	height: 18px;
 	font-size: 16px;
+	line-height: 17.6px;
 
 	&__name {
 		color: #909090;

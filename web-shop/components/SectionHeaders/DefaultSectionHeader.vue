@@ -26,6 +26,10 @@ export default {
 		font-weight: 700;
 		font-family: Evolventa;
 		white-space: nowrap;
+		line-height: 33px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
 	}
 }
 

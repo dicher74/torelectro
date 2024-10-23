@@ -1,6 +1,6 @@
 <template>
 	<section class="popular-questions-area">
-		<DefaultSectionHeader 
+		<DefaultSectionHeader style="height: 40px;"
 		text="<span style='color: #FF3D00;'>Популярные вопросы</span>, которыми часто задаются наши клиенты"/>
 		<InformationDropList :items="items" theme="white" />
 	</section>

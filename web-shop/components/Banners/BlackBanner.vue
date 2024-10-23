@@ -56,6 +56,7 @@ export default {
 
 	&__description {
 		font-size: 24px;
+		line-height: 26.4px;
 		color: #FFFFFF;
 		white-space: pre-line;
 	}

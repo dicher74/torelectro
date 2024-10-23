@@ -1,6 +1,6 @@
 <template>
 	<section class="interesting-nuansions-area">
-		<DefaultSectionHeader text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которые важно знать вашим клиентам"/>
+		<DefaultSectionHeader style="height: 40px;" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которые важно знать вашим клиентам"/>
 		<InformationDropList :items="items" theme="black" />
 	</section>
 </template>
@@ -36,7 +36,7 @@ export default {
 					]
 				},
 				{
-					title: 'Разница защиты «IP20» и «IP44», применимая на удлинителях, производимые компанией «ТОРЭЛЕКТРО»',
+					title: 'Разница степени защиты «IP20» и «IP44», применимая на удлинителях, производимые компанией «ТОРЭЛЕКТРО»',
 					description: [
 						`«IP20», это базовый уровень защиты в удлинителях, которая не имеет защиты от пыли и влаги.`,
 

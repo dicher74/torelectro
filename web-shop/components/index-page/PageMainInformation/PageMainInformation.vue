@@ -42,7 +42,7 @@ export default {
 
 			extraInfo: 
 				`бесплатная доставка от 50000 рублей
-				во все населённые пункты нашей стран`,
+				во все населённые пункты нашей страны`,
 		}
 	},
 	methods: {
@@ -66,22 +66,26 @@ export default {
 	&__title{
 		font-size: 36px;
 		font-weight: 700;
+		line-height: 39.6px;
 	}
 	&__body {
 		display: inline-flex;
 		font-size: 20px;
 		font-weight: 400;
 		height: 120px;
+		line-height: 22px;
 		align-items: center;
 	}
 	&__extra-information {
 		width: 380px;
+		height: 30px;
 		font-weight: 400;
 		font-size: 14px;
 		color: #909090;
 		display: inline-flex;
 		justify-content: center;
 		text-align: center;
+		line-height: 15.4px;
 	}
 }
 </style>

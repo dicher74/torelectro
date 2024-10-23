@@ -23,6 +23,7 @@
 						</div>
 					</div>
 				</div>
+				<img class="telegram-icon" src="~assets/images/telegram-icon-black.svg" />
 			</div>
 		</div>
 	</div>
@@ -45,6 +46,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.telegram-icon {
+	margin-top: auto;
+	align-self: center;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
 .map-container {
 	width: 760px;
 	height: 470px;

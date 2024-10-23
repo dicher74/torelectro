@@ -25,6 +25,8 @@ export default {
 	background-color: #FFFFFF;
 	display: inline-flex;
 	flex-direction: column;
+	height: 210px;
+	box-sizing: border-box;
 
 	padding: 50px 20px;
 	border-radius: 5px;
@@ -32,6 +34,7 @@ export default {
 	&__description {
 		white-space: pre-line;
 		font-size: 18px;
+		line-height: 19.8px;
 	}
 
 	&__title {
