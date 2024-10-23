@@ -2,9 +2,7 @@
 	<section class="black-banner">
 		<div class="black-banner__background"></div>
 		<div class="black-banner__content">
-			<p class="black-banner__description">
-				{{ description }}
-			</p>
+			<p class="black-banner__description" v-html="description"></p>
 			<OrangeButton :width="380" :height="60" :text="buttonText" />
 		</div>
 	</section>

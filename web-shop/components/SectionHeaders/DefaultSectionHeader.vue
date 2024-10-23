@@ -1,6 +1,6 @@
 <template>
 	<div class="default-section-header">
-		<p class="default-section-header__text"> {{ text }} </p>
+		<p class="default-section-header__text" v-html="text"> </p>
 	</div>
 </template>
 
@@ -28,4 +28,5 @@ export default {
 		white-space: nowrap;
 	}
 }
+
 </style>
