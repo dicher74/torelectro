@@ -1,5 +1,6 @@
 <template>
 	<section class="black-banner">
+		<div class="black-banner__background"></div>
 		<div class="black-banner__content">
 			<p class="black-banner__description">
 				{{ description }}
@@ -31,12 +32,20 @@ export default {
 
 <style scoped lang="scss">
 .black-banner {
-	background-color: #101010;
-	margin: 0 -50px;
 	box-sizing: border-box;
-	padding: 50px;
+	display: flex;
 
+	&__background {
+		background-color: #101010;
+		width: 100vw;
+		height: 310px;
+		position: absolute;
+		left: 0;
+	}
 	&__content {
+		z-index: 1;
+		padding: 50px;
+		padding-left: 0;
 		display: inline-flex;
 		flex-direction: column;
 		gap: 20px;
