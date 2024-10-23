@@ -27,11 +27,19 @@ export default {
 	data() {
 		return {
 			cardsAmount: 3,
-			cards: store.state.productCards
 		}
 	},
 
 	computed: {
+		cards() {
+			let cards = store.state.productCards
+			const filterName = store.state.filter
+			console.log('filter: ', filterName)
+			if (filterName) {
+				return cards.filter((elem) => elem.category === filterName)
+			}
+			return cards
+		},
 		translateX() {
 			return this.firstCard * (-400);
 		},

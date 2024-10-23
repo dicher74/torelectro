@@ -19,6 +19,14 @@ export const store = createStore({
 		},
 		changeVariety(state, key) {
 			state.currentVariety = key
+		},
+		setFilter(state, payload) {
+			if (!payload.select) {
+				state.filter = null
+			}
+			else {
+				state.filter = payload.filterName
+			}
 		}
 	},
 	actions: {
@@ -31,6 +39,7 @@ export const store = createStore({
 			dialogMode: null,
 			currentProduct: null,
 			currentVariety: null,
+			filter: null,
 			productCards: [
 				{
 					id: 1,

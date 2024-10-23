@@ -69,7 +69,7 @@ export default {
 	border: none;
 	border-radius: 5px;
 
-	transition: background-color 1s;
+	transition: background-color 0.5s;
 
 	&_selected {
 		background: #FF3D00; 

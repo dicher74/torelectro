@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { store } from '~/store';
 import FilterButton from './FilterButton.vue';
 
 export default {
@@ -40,6 +41,11 @@ export default {
 				this.filters[filterNum].selected = false
 			}
 			this.filters[index].selected = !this.filters[index].selected
+			store.commit('setFilter', {
+				filterName: this.filters[index].text,
+				select: this.filters[index].selected
+			})
+			this.$emit('changeFilter')
 		},
 		scrollNext() {
 			this.$emit('scrollNext')

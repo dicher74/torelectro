@@ -1,7 +1,7 @@
 <template>
 	<section class="product-cards-area">
 		<DefaultSectionHeader :text="title" />
-		<Filters @scrollNext="scrollNext"/>
+		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
 		<ProductCards :firstCard="firstCard"/>
 	</section>
 </template>
@@ -27,8 +27,13 @@ export default {
 	},
 	methods: {
 		scrollNext() {
-			this.firstCard = (this.firstCard + 1) % store.state.productCards.length
+			const filterName = store.state.filter
+			const cards = store.state.productCards.filter((elem) => elem.category === filterName)
+			this.firstCard = (this.firstCard + 1) % cards.length
 		},
+		changeFilter() {
+			this.firstCard = 0
+		}
 	},
 }
 </script>
