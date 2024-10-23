@@ -8,11 +8,26 @@
 		</div>
 		<hr class="select-list__separator"/>
 		<div class="select-list__section">
-			<a class="select-list__tip"> Необходимая документация </a>
-			<a class="select-list__tip"> Контактная информация </a>
+			<a class="select-list__tip" @click="showDocumentationDialog" > Необходимая документация </a>
+			<a class="select-list__tip" @click="showContactsDialog" > Контактная информация </a>
 		</div>
 	</nav>
 </template>
+
+<script>
+import { store } from '~/store';
+
+export default {
+	methods: {
+		showDocumentationDialog() {
+			store.commit('changeDialogMode', {mode: 'documentation'})
+		},
+		showContactsDialog() {
+			store.commit('changeDialogMode', {mode: 'contacts'})
+		}
+	}
+}
+</script>
 
 <style lang="scss" scoped>
 .select-list {

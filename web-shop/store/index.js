@@ -5,6 +5,7 @@ export const store = createStore({
 	mutations: {
 		changeDialogMode(state, payload) {
 			state.dialogMode = payload.mode
+			console.log(state.dialogMode)
 			if (payload.mode === 'product') {
 				state.currentProduct = payload.card
 				state.currentVariety = Object.keys(payload.card.varieties)[0]

@@ -5,14 +5,14 @@
 			<div class="default-footer__empty-zone"></div>
 			<div class="default-footer__content">
 				<div class="content-column content-column_num-1">
-					<a class="content-column__item"> Каталог всего ассортимента компании</a>
-					<a class="content-column__item">Презентация для сотрудничества</a>
-					<a class="content-column__item">Популярные вопросы</a>
+					<a class="content-column__item" href="#catalog"> Каталог всего ассортимента компании</a>
+					<a class="content-column__item" href="#presentation">Презентация для сотрудничества</a>
+					<a class="content-column__item" href="#questions">Популярные вопросы</a>
 				</div>
 				<div class="content-column content-column_num-2">
 					<a class="content-column__item">Вакансия</a>
-					<a class="content-column__item">Документация</a>
-					<a class="content-column__item">Контактная информация</a>
+					<a class="content-column__item" @click="showDocumentationDialog">Документация</a>
+					<a class="content-column__item" @click="showContactsDialog">Контактная информация</a>
 				</div>
 				<div class="content-column content-column_num-3">
 					<a class="content-column__item_last">+7 999 999 99 99</a>
@@ -34,6 +34,21 @@
 	</footer>
 </template>
 
+
+<script>
+import { store } from '~/store';
+
+export default {
+	methods: {
+		showDocumentationDialog() {
+			store.commit("changeDialogMode", { mode: 'documentation' })
+		},
+		showContactsDialog() {
+			store.commit("changeDialogMode", {mode: 'contacts'})
+		}
+	}
+}
+</script>
 
 <style lang="scss" scoped>
 .default-footer {
@@ -100,10 +115,12 @@
 	}
 
 	&__item {
+		cursor: pointer;
 		font-size: 16px;
 		color: #909090;
 		line-height: 17.6px;
 		height: 20px;
+		text-decoration: none;
 	}
 
 	&__item_last {

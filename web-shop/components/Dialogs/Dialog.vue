@@ -8,6 +8,8 @@
 					<ProductDialog v-if="dialogMode === 'product'" />
 					<PresentationDialog v-if="dialogMode === 'presentation'" />
 					<ConsultationDialog v-if="dialogMode === 'consultation'" />
+					<DialogsDocumentationDialog v-if="dialogMode === 'documentation'" />
+					<DialogsContactInformationDialog v-if="dialogMode === 'contacts'" />
 				</div>
 			</div>
 		</div>
