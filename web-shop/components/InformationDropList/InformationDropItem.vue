@@ -3,7 +3,7 @@
 	@click="changeShowMode">
 		<div class="information-drop-item__content">
 			<p :class="`information-drop-item__title information-drop-item__title_theme-${theme}`"> {{ title }} </p>
-			<hr />
+			<hr :class="`information-drop-item__content-separator_theme-${theme}`"/>
 			<div :class="`information-drop-item__description information-drop-item__description_theme-${theme}`">
 				<p :class="`information-drop-item__description-par information-drop-item__description-par_theme-${theme}`"
 					v-for="descriptionPar, descriptionParNum in description"
@@ -76,6 +76,10 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 20px;
+	}
+	&__content-separator_theme-white {
+		color: #F0F0F0;
+		width: 1100px;
 	}
 	&__show-button {
 		width: 24.38px;

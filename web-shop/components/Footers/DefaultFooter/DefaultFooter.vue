@@ -74,11 +74,11 @@
 
 	&_num-2 {
 		position: absolute;
-		left: 400px;
+		margin-left: 400px;
 	}
 	&_num-3 {
 		position: absolute;
-		left: 800px;
+		margin-left: 800px;
 	}
 
 	&__item {
@@ -97,11 +97,11 @@
 
 	&_num-2 {
 		position: absolute;
-		left: 400px;
+		margin-left: 400px;
 	}
 	&_num-3 {
 		position: absolute;
-		left: 800px;
+		margin-left: 800px;
 		font-family: RAYDIS;
 		font-weight: 700;
 	}
