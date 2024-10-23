@@ -25,7 +25,8 @@
 				информационный характер и ни при каких условиях не является офертой, определяемой действующим российским законодательством
 			</p>
 			<div class="default-footer__extra-information">
-				<a class="extra-information__item extra-information__item_num-1">Политика конфиденциальности</a>
+				<a class="extra-information__item extra-information__item_num-1" @click="showPolicyDialog" href="#header">
+					Политика конфиденциальности</a>
 				<a class="extra-information__item extra-information__item_num-2">ООО «ТОРЭЛЕКТРО» · 123456789012345</a>
 				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
 			</div>
@@ -45,6 +46,9 @@ export default {
 		},
 		showContactsDialog() {
 			store.commit("changeDialogMode", {mode: 'contacts'})
+		},
+		showPolicyDialog() {
+			store.commit("changeDialogMode", {mode: 'policy'})
 		}
 	}
 }

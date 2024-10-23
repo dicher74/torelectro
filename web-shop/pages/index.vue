@@ -1,5 +1,5 @@
 <template>
-	<DefaultHeader />
+	<DefaultHeader id="header" />
 	<PageMainInformation />
 	<ProductCardsArea id="catalog" />
 	<PresentationBanner id="presentation" />

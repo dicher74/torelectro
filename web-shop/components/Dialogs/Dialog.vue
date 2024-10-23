@@ -1,7 +1,7 @@
 <template>
 	<div class="dialog">
-		<div class="dialog__shadow">
-			<div class="dialog__window-container">
+		<div :class="`dialog__shadow dialog__shadow_${dialogMode}`">
+			<div :class="`dialog__window-container dialog__window-container_${dialogMode}`">
 				<img class="dialog-window__close" src="~assets/images/dialog-cross.svg"
 					@click="closeDialog"/>
 				<div class="dialog__window">
@@ -10,6 +10,7 @@
 					<ConsultationDialog v-if="dialogMode === 'consultation'" />
 					<DialogsDocumentationDialog v-if="dialogMode === 'documentation'" />
 					<DialogsContactInformationDialog v-if="dialogMode === 'contacts'" />
+					<DialogsPolicyDialog v-if="dialogMode === 'policy'" />
 				</div>
 			</div>
 		</div>
@@ -54,7 +55,12 @@ export default {
 	width: 100%;
 	min-height: 100vh;
 	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.5)
+	background-color: rgba(0, 0, 0, 0.5);
+
+	&_policy {
+		position: absolute;
+		height: 4735px;
+	}
 }
 .dialog__window {
 	background-color: #FFFFFF;
@@ -78,6 +84,14 @@ export default {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+	&_policy {
+		position: absolute;
+		margin-top: 118.78px;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
 }
 
 .dialog-window__close {
