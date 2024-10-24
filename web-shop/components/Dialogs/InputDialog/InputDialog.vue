@@ -4,7 +4,8 @@
 		<div class="presentation-dialog__input-area input-area">
 			<div class="input-area__placeholder">номер сотового телефона</div>
 			<div class="input-area__input-wrapper">
-				<input class="input-area__input" value="+7"/>
+				<p class="input-area__placeholder">+7</p>
+				<input class="input-area__input" :value="phoneNumber" @keydown="phoneFormat($event)"/>
 			</div>
 		</div>
 		<div class="presentation-dialog__button-area button-area">
@@ -34,6 +35,36 @@ export default {
 			default: ''
 		}
 	},
+	data() {
+		return {
+			phoneNumber: "",
+		}
+	},
+	methods: {
+		phoneFormat(event) {
+			const key = event.key
+			if (key === 'Backspace') {
+				if ([4, 8, 11, 14].includes(this.phoneNumber.length)) {
+					this.phoneNumber = this.phoneNumber.slice(0, -2)
+				}
+				else {
+					this.phoneNumber = this.phoneNumber.slice(0, -1)
+				}
+			}
+			if (!['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].includes(key) || this.phoneNumber.length >= 13) {
+				event.preventDefault()
+				return;
+			}
+			if ([3, 7, 10, 13].includes(this.phoneNumber.length)) {
+				this.phoneNumber += ` ${key}`
+				event.preventDefault()
+			}
+			else {
+				this.phoneNumber += `${key}`
+				event.preventDefault()
+			}
+		}
+	}
 }
 </script>
 
@@ -72,6 +103,8 @@ export default {
 	}
 	&__input-wrapper {
 		display: inline-flex;
+		font-size: 18px;
+		gap: 0.5em;
 		padding-left: 10px;
 		background-color: #F0F0F0;
 		border-radius: 5px;
@@ -81,11 +114,20 @@ export default {
 		align-items: center;
 	}
 	&__input {
+		height: 50px;
+		width: 100%;
 		outline: none;
 		border: none;
 		background-color: #F0F0F0;
 		font-size: 18px;
 		line-height: 19.8px;
+		font-family: Evolventa;
+	}
+	&__placeholder {
+		font-size: 18px;
+		line-height: 19.8px;
+		color: #101010;
+		margin-top: 1px;
 	}
 }
 
