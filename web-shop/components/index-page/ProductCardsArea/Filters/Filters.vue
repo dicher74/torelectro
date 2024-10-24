@@ -5,7 +5,7 @@
 				v-for="filter, filterNum in filters" 
 				:key="`filter-button_num-${filterNum}`" 
 				:text="filter.text"
-				:selected="filter.selected" 
+				:selected="selected === filter.text" 
 				:hint="filter.hint"
 				@click="select(filterNum)"/>
 		</nav>
@@ -24,28 +24,27 @@ export default {
 	data() {
 		return {
 			filters: [
-				{text: 'У-ПВС', selected: false, 
+				{text: 'У-ПВС', 
 					hint: `удлинители с проводом 
 							виниловым соединительным`},
-				{text: 'У-КГ', selected: false,
+				{text: 'У-КГ',
 					hint: `удлинители с кабелем
 							гибким`
 				},
 			]
 		}
 	},
+	computed: {
+		selected() {
+			return store.state.filter
+		}
+	},
 	methods: {
 		select(index) {
-			for (let filterNum = 0; filterNum < this.filters.length; filterNum++) {
-				if (filterNum === index) continue;
-				this.filters[filterNum].selected = false
-			}
-			this.filters[index].selected = !this.filters[index].selected
 			store.commit('setFilter', {
 				filterName: this.filters[index].text,
-				select: this.filters[index].selected
+				select: true
 			})
-			this.$emit('changeFilter')
 		},
 		scrollNext() {
 			this.$emit('scrollNext')

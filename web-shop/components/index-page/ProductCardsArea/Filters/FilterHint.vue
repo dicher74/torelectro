@@ -28,18 +28,20 @@ export default {
 	background: rgba(255, 61, 0, 0.75);
 	backdrop-filter: blur(10px);
 	position: absolute;
-	margin-top: -65px;
+	transform: translate(0, calc(-100% - 5px));
 	border-radius: 5px;
 
 	animation-name: appear;
 	animation-duration: 0.4s;
 
 	&__image {
-		width: 20px;
-		height: 20px;
+		width: 15.94px;
+		height: 15.94px;
 	}
 	&__description {
 		color: #FFFFFF;
+		line-height: 17.6px;
+		font-size: 16px;
 		white-space: pre-line;
 	}
 }

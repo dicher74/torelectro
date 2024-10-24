@@ -11,7 +11,8 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
       ]
-    },
+	  },
   },
-  css: ["./assets/css/master.css"],
+	css: ["./assets/css/master.css"],
+	ssr: true,
 })

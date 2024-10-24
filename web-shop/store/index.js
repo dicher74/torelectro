@@ -42,7 +42,7 @@ export const store = createStore({
 			dialogMode: null,
 			currentProduct: null,
 			currentVariety: null,
-			filter: null,
+			filter: 'У-ПВС',
 			productCards: [
 				{
 					id: 1,
