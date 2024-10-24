@@ -34,18 +34,12 @@ export default {
 		theme: {
 			type: String,
 			default: "white",
+		},
+		showMode: {
+			type: Boolean,
+			default: false,
 		}
 	},
-	data() {
-		return {
-			showMode: false,
-		}
-	},
-	methods: {
-		changeShowMode() {
-			this.showMode = !this.showMode
-		}
-	}
 }
 </script>
 
@@ -68,6 +62,12 @@ export default {
 		height: auto;
 		animation-name: down;
 		animation-duration: 1s;
+	}
+	&_show-false {
+		height: auto;
+		max-height: 60px;
+		animation-name: up;
+		animation-duration: 0.5s;
 	}
 	&_theme-black {
 		background-color: #101010;
@@ -98,7 +98,12 @@ export default {
 	}
 	&__show-button_show-true {
 		transform: rotate(45deg);
-		animation-name: rotate;
+		animation-name: rotate-right;
+		animation-duration: 0.3s;
+	}
+	&__show-button_show-false {
+		transform: rotate(0deg);
+		animation-name: rotate-left;
 		animation-duration: 0.3s;
 	}
 	&__message {
@@ -141,12 +146,29 @@ export default {
 		max-height: 300px;
 	}
 }
-@keyframes rotate {
+@keyframes up {
+	from {
+		max-height: 300px;
+	}
+	to {
+		max-height: 60px;
+	}
+}
+@keyframes rotate-right {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
 		transform: rotate(45deg);
+	}
+}
+
+@keyframes rotate-left {
+	from {
+		transform: rotate(45deg);
+	}
+	to {
+		transform: rotate(0deg);
 	}
 }
 </style>

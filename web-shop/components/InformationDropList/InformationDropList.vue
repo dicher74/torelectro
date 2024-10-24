@@ -6,6 +6,8 @@
 			:title="item.title"
 			:description="item.description"
 			:theme="theme"
+			:showMode="active === item.title"
+			@click="choose(item.title)"
 			/>
 	</div>
 </template>
@@ -25,6 +27,20 @@ export default {
 		theme: {
 			type: String,
 			default: "white",
+		}
+	},
+	data() {
+		return {
+			active: null,
+		}
+	},
+	methods: {
+		choose(item) {
+			if (this.active === item) {
+				this.active = null
+				return;
+			}
+			this.active = item
 		}
 	}
 }
