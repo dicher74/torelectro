@@ -46,7 +46,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
 	.orange-button:hover {
-			background-color: darkred;
+			background-color: rgba(255, 61, 0, 0.75);
 		}
 }
 </style>

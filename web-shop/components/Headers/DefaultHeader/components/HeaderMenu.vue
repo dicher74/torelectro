@@ -33,4 +33,10 @@ export default {
 		background-color: rgba(255, 61, 0, 0.75);
 	}
 }
+
+@media screen  and (min-width: 1280px) and (hover: hover){
+	.navigation-menu:hover {
+		background-color: rgba(255, 61, 0, 0.75);
+	}
+}
 </style>
