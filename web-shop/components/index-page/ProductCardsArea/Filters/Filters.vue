@@ -5,7 +5,7 @@
 				v-for="filter, filterNum in filters" 
 				:key="`filter-button_num-${filterNum}`" 
 				:text="filter.text"
-				:selected="selected === filter.text" 
+				:selected="selected === filter.id" 
 				:hint="filter.hint"
 				@click="select(filterNum)"/>
 		</nav>
@@ -24,10 +24,14 @@ export default {
 	data() {
 		return {
 			filters: [
-				{text: 'У-ПВС', 
+				{
+					id: 'У-ПВС', 
+					text: 'У-ПВС',
 					hint: `удлинители с проводом 
 							виниловым соединительным`},
-				{text: 'У-КГ',
+				{
+					id: 'У-КГ',
+					text: 'У-КГ ХЛ',
 					hint: `удлинители с кабелем
 							гибким`
 				},
@@ -42,7 +46,7 @@ export default {
 	methods: {
 		select(index) {
 			store.commit('setFilter', {
-				filterName: this.filters[index].text,
+				filterName: this.filters[index].id,
 				select: true
 			})
 		},
