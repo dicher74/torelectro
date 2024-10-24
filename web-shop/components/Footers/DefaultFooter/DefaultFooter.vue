@@ -155,5 +155,6 @@ export default {
 	margin-left: auto;
 	width: 30px;
 	height: 30px;
+	margin-top: -5px;
 }
 </style>

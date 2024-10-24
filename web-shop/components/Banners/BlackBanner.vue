@@ -44,6 +44,8 @@ export default {
 		height: 310px;
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
+		position: relative;
+		top: -2px;
 	}
 	&__content {
 		position: absolute;

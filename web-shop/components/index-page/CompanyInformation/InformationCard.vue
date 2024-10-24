@@ -30,6 +30,7 @@ export default {
 
 	padding: 50px 20px;
 	border-radius: 5px;
+	justify-content: center;
 
 	&__description {
 		white-space: pre-line;
