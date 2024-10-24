@@ -96,10 +96,18 @@ export default {
 
 .dialog-window__close {
 	cursor: pointer;
+	opacity: 0.25;
+	transition: opacity 0.3s;
 }
 
 @keyframes show {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@media screen and (min-width: 1280px) and (hover: hover) {
+	.dialog-window__close:hover {
+		opacity: 1;
+	}
 }
 </style>
