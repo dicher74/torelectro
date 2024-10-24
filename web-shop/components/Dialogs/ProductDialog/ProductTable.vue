@@ -24,7 +24,7 @@
 			<div :class="`
 					product-table__item
 					product-table__item_usual
-					product-table__item_usuall_odd-${rowNum % 2}`">
+					product-table__item_usual_odd-${rowNum % 2}`">
 					{{ protection }}
 			</div>
 			<div :class="`
@@ -36,7 +36,7 @@
 			<div :class="`
 					product-table__item
 					product-table__item_usual
-					product-table__item_ususal_odd-${rowNum % 2}`">
+					product-table__item_usual_odd-${rowNum % 2}`">
 					{{ amount }}
 			</div>
 			<div :class="`
