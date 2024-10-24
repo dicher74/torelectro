@@ -19,6 +19,7 @@ export default {
 
 <style scoped lang="scss">
 .navigation-menu {
+	user-select: none;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;

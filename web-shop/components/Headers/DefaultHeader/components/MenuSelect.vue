@@ -38,8 +38,6 @@ export default {
 	gap: 15px;
 	padding: 15px 20px 20px 40px;
 	border-radius: 5px;
-	animation-name: down;
-	animation-duration: 1s;
 	overflow: hidden;
 
 	background-color: #FFFFFF;
@@ -78,15 +76,6 @@ export default {
 			text-decoration: none;
 			position: absolute;
 		}
-	}
-}
-
-@keyframes down {
-	from {
-		max-height: 0px;
-	}
-	to {
-		max-height: 300px;
 	}
 }
 </style>
