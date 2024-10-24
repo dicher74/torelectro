@@ -54,6 +54,7 @@ export default {
 	padding: 20px;
 	border-radius: 5px;
 	font-size: 18px;
+	line-height: 19.8px;
 	overflow: hidden;
 	transition: height 1s;
 	user-select: none;
@@ -129,7 +130,6 @@ export default {
 }
 .information-drop-item__description-par {
 	line-height: 19.8px;
-	margin-top: 10px;
 	&_theme-black {
 		color: #909090;
 	}
