@@ -2,7 +2,12 @@
 	<div class="contact-info-dialog">
 		<p class="contact-info-dialog__title">Контактная информация</p>
 		<div class="contact-info-dialog__body">
-			<div class="map-container"></div>
+			<div class="map-container">
+				<iframe src="https://yandex.ru/map-widget/v1/?um=cons
+				tructor%3A754a2e491871d03e955adbe14bfe277b69db029e6128f126b626f
+				ba6d034bcc4&amp;source=constructor" width="760" height="470" frameborder="0">
+			</iframe>
+			</div>
 			<div class="info-blocks">
 				<div class="info-blocks__block info-blocks__block_num-1">
 					<p class="info-block__line"> +7 495 198 62 55 </p>

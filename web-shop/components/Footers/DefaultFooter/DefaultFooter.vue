@@ -30,7 +30,11 @@
 				<a class="extra-information__item extra-information__item_num-2">ООО «ТОРЭЛЕКТРО» · 123456789012345</a>
 				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
 			</div>
-			<div class="default-footer__map-area"></div>
+			<div class="default-footer__map-area">
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A75
+						4a2e491871d03e955adbe14bfe277b69db029e6128f126b626fba6d034bcc4
+						&amp;source=constructor" width="1180" height="240" frameborder="0"></iframe>
+			</div>
 		</div>
 	</footer>
 </template>
@@ -96,6 +100,7 @@ export default {
 		height: 150px;
 		background-color: #F0F0F0;
 		border-radius: 5px;
+		overflow: hidden;
 	}
 }
 

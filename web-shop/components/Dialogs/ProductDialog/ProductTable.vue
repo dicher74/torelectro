@@ -159,6 +159,7 @@ export default {
 	}
 	&__item_basket {
 		background-color: #FF3D00;
+		cursor: pointer;
 	}
 	&__item_red_odd-1 {
 		background-color: rgba(255, 236, 229, 0.5);

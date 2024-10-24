@@ -20,10 +20,10 @@ import { store } from '~/store';
 export default {
 	methods: {
 		showDocumentationDialog() {
-			store.commit('changeDialogMode', {mode: 'documentation'})
+			store.commit('changeDialogMode', {mode: ['documentation']})
 		},
 		showContactsDialog() {
-			store.commit('changeDialogMode', {mode: 'contacts'})
+			store.commit('changeDialogMode', {mode: ['contacts']})
 		}
 	}
 }
