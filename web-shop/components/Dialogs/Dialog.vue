@@ -71,7 +71,6 @@ export default {
     animation: show 0.8s;
 
 	margin-top: 90px;
-	transform: translate(calc(-50% + 50vw), 0);
 }
 
 .dialog-window__close {

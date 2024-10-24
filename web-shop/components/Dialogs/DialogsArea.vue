@@ -41,8 +41,11 @@ export default {
 	height: 4735px;
 }
 .dialogs-container {
+	position: absolute;
+	width: 100%;
 	display: inline-flex;
 	flex-direction: column;
 	gap: 1000px;
+	align-items: center;
 }
 </style>
