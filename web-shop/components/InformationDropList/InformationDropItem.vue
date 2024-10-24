@@ -123,13 +123,13 @@ export default {
 	gap: 20px; 
 }
 .information-drop-item__description-par {
+	line-height: 19.8px;
+	margin-top: 10px;
 	&_theme-black {
 		color: #909090;
-		line-height: 19.8px;
 	}
 	&_theme-white {
 		color: #505050;
-		line-height: 19.8px;
 	}
 }
 

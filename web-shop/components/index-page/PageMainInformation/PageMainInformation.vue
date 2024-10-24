@@ -67,6 +67,7 @@ export default {
 		font-size: 36px;
 		font-weight: 700;
 		line-height: 39.6px;
+		margin-top: 3px;
 	}
 	&__body {
 		display: inline-flex;

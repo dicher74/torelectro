@@ -1,6 +1,6 @@
 <template>
 	<section class="product-cards-area">
-		<DefaultSectionHeader :text="title" />
+		<DefaultSectionHeader :text="title" style="top: 10px;"/>
 		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
 		<ProductCards :firstCard="firstCard"/>
 	</section>

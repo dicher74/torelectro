@@ -1,7 +1,7 @@
 <template>
 	<button class="call-button">
 		<img class="call-button__image" src="~assets/images/Phone.svg" />
-		<img class="call-button__separator" src="~assets/images/call-button-separator.svg" />
+		<div class="call-button__separator"></div>
 		<p class="call-button__phone-number"> {{phoneHumber}} </p>
 	</button>
 </template>
@@ -18,8 +18,11 @@ export default {
 
 <style scoped lang="scss">
 .call-button {
+	height: 40px;
+	width: 205px;
+	box-sizing: border-box;
 	display: inline-flex;
-	padding: 10px 15px;
+	padding: 0px 15px;
 	gap: 15px;
 	align-items: center;
 	background: #FF3D00;
@@ -32,12 +35,17 @@ export default {
 	}
 	&__separator {
 		height: 10px;
+		border: 1px rgba(240, 240, 240, 0.5) solid;
+		border-radius: 1px;
 	}
 	&__phone-number {
 		color: #F0F0F0;
 		font-family: Evolventa;
 		font-weight: 400;
 		font-size: 16px;
+		line-height: 17.6px;
+		margin-top: 1px;
+		white-space: nowrap;
 	}
 }
 </style>

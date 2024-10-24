@@ -1,6 +1,6 @@
 <template>
 	<section class="company-information">
-		<DefaultSectionHeader text="Информация о компании и преимуществах" />
+		<DefaultSectionHeader text="Информация о компании и преимуществах" style="top: 11px;" />
 		<div class="information-cards">
 			<InformationCard 
 				v-for="card, cardNum in cards" 

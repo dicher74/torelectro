@@ -19,7 +19,8 @@ export default {
 .default-section-header {
 	width: 820px;
 	display: flex;
-	align-items: end;
+	position: relative;
+	top: 1px;
 
 	&__text {
 		font-size: 30px;
@@ -28,8 +29,6 @@ export default {
 		white-space: nowrap;
 		line-height: 33px;
 		height: 50px;
-		display: inline-flex;
-		align-items: center;
 	}
 }
 
