@@ -41,7 +41,6 @@ export default {
 		font-size: 18px;
 		font-family: Evolventa;
 		font-weight: 400;
-		-webkit-text-stroke: 0.25px #FFFFFF;
 	}
 }
 

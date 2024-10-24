@@ -68,7 +68,6 @@ export default {
 		line-height: 19.8px;
 		height: 20px;
 		font-weight: 400;
-		-webkit-text-stroke: 0.25px #101010;
 	}
 	&__options {
 		display: inline-flex;
