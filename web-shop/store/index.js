@@ -30,6 +30,16 @@ export const store = createStore({
 			else {
 				state.filter = payload.filterName
 			}
+		},
+		scrollToTop() {
+			const upAnimation = setInterval(
+				() => {
+					scrollBy(0, -50)
+					if (window.pageYOffset <= 0) {
+						clearInterval(upAnimation)
+					}
+				}, 5
+			)
 		}
 	},
 	actions: {

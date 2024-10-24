@@ -63,6 +63,7 @@
 		color: rgba(80, 80, 80, 1);
 		font-size: 16px;
 		line-height: 17.6px;
+		padding-top: 3px;
 	}
 	&__block_name {
 		padding-left: 10px;

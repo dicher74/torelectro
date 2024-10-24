@@ -47,7 +47,8 @@
 			</div>
 			<div :class="`
 					product-table__item
-					product-table__item_basket`">
+					product-table__item_basket`"
+					@click="scrollToConsultation">
 				<img class="basket-image" src="~assets/images/basket.svg" />
 			</div>
 		</template>
@@ -55,6 +56,8 @@
 </template>
 
 <script>
+import { store } from '~/store';
+
 export default {
 	props: {
 		currentProduct: {
@@ -114,6 +117,9 @@ export default {
 			if (amount % 10 === 1) { return 'розетка' }
 			if (amount % 10 >= 5) { return 'розеток' }
 			return 'розетки'
+		},
+		scrollToConsultation() {
+			store.commit('scrollToId', "presentation-dialog")
 		}
 	}
 }

@@ -6,11 +6,12 @@
 					@click="closeDialog"/>
 				<div class="dialog__window">
 					<ProductDialog v-if="dialogMode === 'product'" />
-					<PresentationDialog v-if="dialogMode === 'presentation'" />
+					<PresentationDialog v-if="dialogMode === 'presentation'" id="presentation-dialog"/>
 					<ConsultationDialog v-if="dialogMode === 'consultation'" />
 					<DialogsDocumentationDialog v-if="dialogMode === 'documentation'" />
 					<DialogsContactInformationDialog v-if="dialogMode === 'contacts'" />
 					<DialogsPolicyDialog v-if="dialogMode === 'policy'" />
+					<VacansionDialog v-if="dialogMode === 'vacansion'" />
 				</div>
 			</div>
 		</div>
@@ -22,12 +23,14 @@ import { store } from '~/store';
 import ProductDialog from './ProductDialog/ProductDialog.vue';
 import PresentationDialog from './PresentationDialog/PresentationDialog.vue';
 import ConsultationDialog from './ConsultationDialog/ConsultationDialog.vue';
+import VacansionDialog from './VacansionDialog/VacansionDialog.vue';
 
 export default {
 	components: {
 		ProductDialog,
 		PresentationDialog,
 		ConsultationDialog,
+		VacansionDialog,
 	},
 	computed: {
 		dialogMode() {
@@ -43,24 +46,23 @@ export default {
 		dialogMode(newValue) {
 			console.log('dialog mode: ', newValue)
 		}
+	},
+	mounted() {
+		console.log('show dialog!')
+		store.commit('scrollToTop')
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 .dialog__shadow {
-	position: fixed;
 	top: 0;
 	left: 0	;
 	width: 100%;
-	min-height: 100vh;
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.5);
-
-	&_policy {
-		position: absolute;
-		height: 4735px;
-	}
+	position: absolute;
+	height: 4735px;
 }
 .dialog__window {
 	background-color: #FFFFFF;
@@ -81,17 +83,12 @@ export default {
 	opacity: 1;
     animation: show 0.8s;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 
-	&_policy {
-		position: absolute;
-		margin-top: 118.78px;
-		top: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
-	}
+	position: absolute;
+	margin-top: 90px;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 .dialog-window__close {
