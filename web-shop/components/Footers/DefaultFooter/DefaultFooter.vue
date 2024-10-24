@@ -18,7 +18,9 @@
 					<a class="content-column__item_last">+7 999 999 99 99</a>
 					<a class="content-column__item_last">tor@torelektro.ru</a>
 				</div>
-				<img class="telegram-icon" src="~assets/images/telegram-icon.svg" />
+				<a href="https://t.me/humanfromthefuture" target="_blank" class="telegram-icon">
+					<img src="~assets/images/telegram-icon.svg" />
+				</a>
 			</div>
 			<p class="default-footer__disclaimer">
 				{{`Настоящий интернет-сайт, а также вся информация о товарах и об услугах, предоставленная на нём, носит исключительно

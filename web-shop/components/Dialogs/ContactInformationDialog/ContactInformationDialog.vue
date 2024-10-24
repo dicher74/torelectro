@@ -28,7 +28,9 @@
 						</div>
 					</div>
 				</div>
-				<img class="telegram-icon" src="~assets/images/telegram-icon-black.svg" />
+				<a href="https://t.me/humanfromthefuture" target="_blank" class="telegram-icon">
+					<img src="~assets/images/telegram-icon-black.svg" />
+				</a>
 			</div>
 		</div>
 	</div>
@@ -59,6 +61,7 @@ export default {
 	cursor: pointer;
 }
 .map-container {
+	overflow: hidden;
 	width: 760px;
 	height: 470px;
 	background-color: rgba(245, 245, 245, 1);

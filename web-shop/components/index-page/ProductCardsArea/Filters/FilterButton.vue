@@ -56,6 +56,7 @@ export default {
 	cursor: pointer;
 	width: 200px;
 	height: 50px;
+	box-sizing: border-box;
 
 	display: inline-flex;
 	align-items: center;

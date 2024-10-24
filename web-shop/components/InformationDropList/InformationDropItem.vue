@@ -10,9 +10,11 @@
 					:key="`description-par_num-${descriptionParNum}`">
 					{{ descriptionPar }}
 				</p>
-				<p v-if="theme === 'black'" class="information-drop-item__message">
-					Написать нам в мессенджер «Telegram»
-				</p>
+				<a href="https://t.me/humanfromthefuture" target="_blank">
+					<p v-if="theme === 'black'" class="information-drop-item__message">
+						Написать нам в мессенджер «Telegram»
+					</p>
+				</a>
 			</div>
 		</div>
 		<img :class="`information-drop-item__show-button information-drop-item__show-button_show-${showMode}`" 
