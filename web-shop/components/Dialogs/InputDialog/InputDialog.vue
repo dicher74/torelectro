@@ -93,6 +93,7 @@ export default {
 	display: inline-flex;
 	flex-direction: column;
 	text-align: center;
+	font-size: 14px;
 
 	&__par_top {
 		color: #909090;

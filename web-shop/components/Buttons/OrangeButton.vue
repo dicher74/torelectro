@@ -32,6 +32,8 @@ export default {
 	background-color: #FF3D00;
 	border: none;
 	border-radius: 5px;
+	box-sizing: border-box;
+	padding-top: 0.15em;
 
 	cursor: pointer;
 	transition: background-color 0.6s;
