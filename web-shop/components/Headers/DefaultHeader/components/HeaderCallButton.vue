@@ -44,7 +44,7 @@ export default {
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 17.6px;
-		margin-top: 1px;
+		margin-top: 4px;
 		white-space: nowrap;
 	}
 }

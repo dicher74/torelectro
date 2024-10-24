@@ -68,6 +68,7 @@ export default {
 	background: #FFFFFF;
 	border: none;
 	border-radius: 5px;
+	padding-top: 4px;
 
 	transition: background-color 0.5s;
 

@@ -164,6 +164,7 @@ export const store = createStore({
 						'3500 Вт': {id: [305, 308], radius: '2х1,5'},
 						'4000 Вт': {id: [309, 312], radius: '2х2,5'},
 					},
+					qualityTag: 'выбор настоящих профессионалов',
 				},
 				{
 					id: 6,

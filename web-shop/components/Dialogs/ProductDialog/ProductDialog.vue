@@ -182,7 +182,6 @@ export default {
 		user-select: none;
 	}
 	&__tag_quality {
-		-webkit-text-stroke: 0.25px #FFFFFF;
 		width: 325px;
 	}
 }
