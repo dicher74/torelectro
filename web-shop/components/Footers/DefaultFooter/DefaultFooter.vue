@@ -21,8 +21,8 @@
 				<img class="telegram-icon" src="~assets/images/telegram-icon.svg" />
 			</div>
 			<p class="default-footer__disclaimer">
-				Настоящий интернет-сайт, а также вся информация о товарах и об услугах, предоставленная на нём, носит исключительно
-				информационный характер и ни при каких условиях не является офертой, определяемой действующим российским законодательством
+				{{`Настоящий интернет-сайт, а также вся информация о товарах и об услугах, предоставленная на нём, носит исключительно
+				информационный характер и ни при каких условиях не является офертой, определяемой действующим российским законодательством`}}
 			</p>
 			<div class="default-footer__extra-information">
 				<a class="extra-information__item extra-information__item_num-1" @click="showPolicyDialog" href="#header">
@@ -93,6 +93,7 @@ export default {
 		color: #505050;
 		line-height: 17.6px;
 		height: 35px;
+		white-space: pre-line;
 	}
 	&__extra-information {
 		display: inline-flex;

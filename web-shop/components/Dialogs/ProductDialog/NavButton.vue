@@ -1,7 +1,6 @@
 <template>
 	<button :class="`nav-button nav-button_active-${active}`">
 		<p class="nav-button__value"> {{ text }}  </p>
-		<br/>
 		<p class="nav-button__description"> С мощностью </p>
 	</button>
 </template>
@@ -44,7 +43,6 @@ export default {
 	}
 	&__value {
 		font-size: 16px;
-		-webkit-text-stroke: 0.25px #FFFFFF;
 		color: #FFFFFF;
 	}
 	&__description {
