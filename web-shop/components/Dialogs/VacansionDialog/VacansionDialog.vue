@@ -4,7 +4,7 @@
 		<div class="vacansion-dialog__body">
 			<div class="dialog-body__right">
 				<VacansionDescription />
-				<ButtonsOrangeButton :width="360" :height="60" text="Анкета для заполнения"/>
+				<ButtonsOrangeButton :width="360" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
 				<div class="button-area__policy-text policy-text">
 					<p class="policy-text__par_top"> нажимая, вы соглашаетесь </p>
 					<a class="policy-text__policy-link"> с условиями политики конфиденциальности </a>
@@ -15,12 +15,18 @@
 </template>
 
 <script>
+import { store } from '~/store';
 import VacansionDescription from './VacansionDescription.vue';
 
 export default {
 	components: {
 		VacansionDescription,
 	},
+	methods: {
+		scrollToAnket() {
+			store.commit('scrollToElem', 'anket')
+		}
+	}
 }
 </script>
 

@@ -119,7 +119,7 @@ export default {
 			return 'розетки'
 		},
 		scrollToConsultation() {
-			store.commit('scrollToId', "presentation-dialog")
+			store.commit('scrollToElem', "consultation-dialog")
 		}
 	}
 }
@@ -129,6 +129,7 @@ export default {
 .basket-image {
 	width: 15px;
 	height: 15px;
+	cursor: pointer;
 }
 .product-table {
 	display: grid;

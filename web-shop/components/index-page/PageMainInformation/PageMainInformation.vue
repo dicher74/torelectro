@@ -47,7 +47,7 @@ export default {
 	},
 	methods: {
 		showConsultationDialog() {
-			store.commit('changeDialogMode', {mode: 'consultation'})
+			store.commit('changeDialogMode', {mode: ['consultation']})
 		}
 	}
 }

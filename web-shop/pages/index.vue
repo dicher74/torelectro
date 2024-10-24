@@ -9,11 +9,11 @@
 	<InterestingNuansionsArea />
 	<DefaultFooter />
 
-	<Dialog v-if="dialogMode" />
+	<DialogsArea v-if="dialogList.length" />
 </template>
 
 <script>
-import Dialog from '~/components/Dialogs/Dialog.vue';
+import DialogsArea from '~/components/Dialogs/DialogsArea.vue';
 import DefaultFooter from '~/components/Footers/DefaultFooter/DefaultFooter.vue';
 import DefaultHeader from '~/components/Headers/DefaultHeader/DefaultHeader.vue';
 import CompanyInformation from '~/components/index-page/CompanyInformation/CompanyInformation.vue';
@@ -36,14 +36,14 @@ export default {
 		PopularQuestionsArea,
 		InterestingNuansionsArea,
 		DefaultFooter,
-		Dialog,
+		DialogsArea,
 	},
 
 	layout: "default",
 
 	computed: {
-		dialogMode() {
-			return store.state.dialogMode
+		dialogList() {
+			return store.state.dialogList
 		}
 	}
 }

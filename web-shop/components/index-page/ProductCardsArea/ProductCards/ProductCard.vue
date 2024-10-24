@@ -32,7 +32,7 @@ export default {
 	},
 	methods: {
 		showCard() {
-			store.dispatch('changeDialogModeAsync', {mode: 'product', card: this.description})
+			store.commit('changeDialogMode', {mode: ['product', 'consultation'], card: this.description})
 		}
 	}
 }

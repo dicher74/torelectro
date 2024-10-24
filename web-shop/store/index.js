@@ -4,15 +4,15 @@ import { createStore } from 'vuex'
 export const store = createStore({
 	mutations: {
 		changeDialogMode(state, payload) {
-			state.dialogMode = payload.mode
+			state.dialogList = payload.mode
 			console.log(state.dialogMode)
-			if (payload.mode === 'product') {
+			if (payload.mode.includes('product')) {
 				state.currentProduct = payload.card
 				state.currentVariety = Object.keys(payload.card.varieties)[0]
 			}
 		},
 		closeDialog(state) {
-			state.dialogMode = false
+			state.dialogList = []
 		},
 		showNextCard(state) {
 			const currentId = state.currentProduct.id
@@ -40,16 +40,30 @@ export const store = createStore({
 					}
 				}, 5
 			)
-		}
-	},
-	actions: {
-		changeDialogModeAsync(context, payload) {
-			context.commit('changeDialogMode', payload)
+		},
+		scrollToElem(state, id) {
+			console.log('scroll start', id)
+			const scrollAnimation = setInterval(
+				() => {
+					const diff = document.getElementById(id).getBoundingClientRect().top
+					if (Math.abs(diff) < 200) {
+						clearInterval(scrollAnimation)
+					}
+					let scrollDiff
+					if (diff < 0) {
+						scrollDiff = -20
+					}
+					else {
+						scrollDiff = 20
+					}
+					scrollBy(0, scrollDiff)
+				}
+			)
 		}
 	},
 	state() {
 		return {
-			dialogMode: null,
+			dialogList: [],
 			currentProduct: null,
 			currentVariety: null,
 			filter: 'У-ПВС',

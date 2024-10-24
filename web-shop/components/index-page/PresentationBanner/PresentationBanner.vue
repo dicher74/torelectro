@@ -27,7 +27,7 @@ export default {
 	},
 	methods: {
 		showPresentationDialog() {
-			store.commit('changeDialogMode', { mode: 'presentation' })
+			store.commit('changeDialogMode', { mode: ['presentation'] })
 		},
 	},
 }

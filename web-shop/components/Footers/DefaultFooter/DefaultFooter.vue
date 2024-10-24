@@ -6,13 +6,13 @@
 			<div class="default-footer__content">
 				<div class="content-column content-column_num-1">
 					<a class="content-column__item" href="#catalog"> Каталог всего ассортимента компании</a>
-					<a class="content-column__item" @click="showDialog('presentation')">Презентация для сотрудничества</a>
+					<a class="content-column__item" @click="showDialog(['presentation'])">Презентация для сотрудничества</a>
 					<a class="content-column__item" href="#questions">Популярные вопросы</a>
 				</div>
 				<div class="content-column content-column_num-2">
-					<a class="content-column__item" @click="showDialog('vacansion')">Вакансия</a>
-					<a class="content-column__item" @click="showDialog('documentation')">Документация</a>
-					<a class="content-column__item" @click="showDialog('contacts')">Контактная информация</a>
+					<a class="content-column__item" @click="showDialog(['vacansion', 'anket'])">Вакансия</a>
+					<a class="content-column__item" @click="showDialog(['documentation'])">Документация</a>
+					<a class="content-column__item" @click="showDialog(['contacts'])">Контактная информация</a>
 				</div>
 				<div class="content-column content-column_num-3">
 					<a class="content-column__item_last">+7 999 999 99 99</a>
@@ -25,7 +25,7 @@
 				информационный характер и ни при каких условиях не является офертой, определяемой действующим российским законодательством`}}
 			</p>
 			<div class="default-footer__extra-information">
-				<a class="extra-information__item extra-information__item_num-1" @click="showDialog('policy')">
+				<a class="extra-information__item extra-information__item_num-1" @click="showDialog(['policy'])">
 					Политика конфиденциальности</a>
 				<a class="extra-information__item extra-information__item_num-2">ООО «ТОРЭЛЕКТРО» · 123456789012345</a>
 				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
