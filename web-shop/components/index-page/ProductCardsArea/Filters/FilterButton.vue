@@ -78,5 +78,13 @@ export default {
 		color: #FFFFFF;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.filter-button {
+		width: 170px;
+		font-size: 14px;
+		line-height: 16.1px;
+	}
+}
 </style>
 

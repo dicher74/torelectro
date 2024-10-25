@@ -60,4 +60,13 @@ export default {
 			}
 		}
 }
+
+@media screen and (width < $ipad) {
+	.orange-button {
+		&__text {
+			font-size: 16px;
+			line-height: 17.6px;
+		}
+	}
+}
 </style>

@@ -41,12 +41,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .product-cards-area {
 	display: inline-flex;
 	flex-direction: column;
 	gap: 20px;
 	margin-top: 250px;
 	width: 100%;
+}
+
+@media screen and (width < $ipad) {
+	.product-cards-area {
+		margin-top: 100px;
+	}
 }
 </style>

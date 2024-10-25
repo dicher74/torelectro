@@ -163,4 +163,63 @@ export default {
 	height: 30px;
 	margin-top: -5px;
 }
+
+@media screen and (width < $ipad) {
+	.telegram-icon {
+		position: absolute;
+	}
+	.default-footer {
+		&__container {
+			padding: 40px 0px;
+			width: 350px;
+		}
+		&__content {
+			display: inline-flex;
+			flex-direction: column;
+			gap: 40px;
+		}
+		&__empty-zone {
+			width: 350px;
+			height: 40px;
+		}
+		&__background {
+			height: 900px;
+		}
+		&__disclaimer {
+			font-size: 14px;
+			line-height: 15.4px;
+			white-space: wrap;
+			height: 90px;
+		}
+		&__extra-information {
+			flex-direction: column;
+		}
+	}
+	.extra-information__item {
+		&_num-2 {
+			position: static;
+			margin-left: 0;
+		}
+		&_num-3 {
+			position: static;
+			margin-left: 0;
+		}
+	}
+	.content-column {
+		gap: 5px;
+		&__item {
+			white-space: nowrap;
+			font-size: 14px;
+			line-height: 15.4px;
+		}
+		&_num-2 {
+			margin-left: 0;
+			position: static;
+		}
+		&_num-3 {
+			margin-left: 0;
+			position: static;
+		}
+	}
+}
 </style>

@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .company-information {
 	width: 100%;
 	margin-top: 100px;
@@ -69,5 +69,6 @@ export default {
 	flex-direction: column;
 	gap: 10px;
 }
+
 </style>
 

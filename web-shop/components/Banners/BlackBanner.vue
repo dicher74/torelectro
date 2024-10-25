@@ -63,4 +63,13 @@ export default {
 		white-space: pre-line;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.black-banner {
+		&__description {
+			font-size: 18px;
+			line-height: 19.8px;
+		}
+	}
+}
 </style>

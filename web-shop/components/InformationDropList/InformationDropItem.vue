@@ -174,4 +174,15 @@ export default {
 		transform: rotate(0deg);
 	}
 }
+
+@media screen and (width < $ipad) {
+	.information-drop-item {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.information-drop-item__title {
+		white-space: wrap;
+		height: 30px;
+	}
+}
 </style>

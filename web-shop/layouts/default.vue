@@ -25,6 +25,13 @@
 		padding: 20px 20px 0;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.content-wrapper {
+		width: $phone;
+		padding: 20px 20px 0;
+	}
+}
 .content-wrapper-global {
 	display: inline-flex;
 	width: 100%;

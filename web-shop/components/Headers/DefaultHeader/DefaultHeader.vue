@@ -78,4 +78,12 @@ export default {
 		border-radius: 5px;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.default-header {
+		&__body {
+			width: 40px;
+		}
+	}
+}
 </style>

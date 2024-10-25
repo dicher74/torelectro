@@ -39,4 +39,14 @@ export default {
 		}
 	}
 }
+
+@media screen and (width < $ipad) {
+	.default-section-header {
+		&__text {
+			font-size: 20px;
+			line-height: 22px;
+			white-space: wrap;
+		}
+	}
+}
 </style>

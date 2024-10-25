@@ -12,7 +12,7 @@
 				</p>
 			</div>
 		</div>
-		<OrangeButton text="Посмотреть" :width="340" :height="60" style="margin-top: 22px;" @click="showCard"/>
+		<OrangeButton text="Посмотреть" :width="340" :height="60" class="product-card__button" @click="showCard"/>
 	</div>
 </template>
 
@@ -61,6 +61,9 @@ export default {
 		flex-direction: column;
 		gap: 15px;
 	}
+	&__button {
+		margin-top: 22px;
+	}
 }
 
 .description {
@@ -84,6 +87,45 @@ export default {
 
 	&__name {
 		color: #909090;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.product-card {
+		width: 350px;
+		height: 530px;
+		padding: 15px;
+		&__image {
+			min-height: 320px;
+			height: 320px;
+			width: 320px;
+		}
+		&__description {
+			gap: 10px;
+		}
+		&__button {
+			margin-top: 15px;
+		}
+	}
+
+	.description {
+		&__title {
+			font-size: 16px;
+			line-height: 17.6px;
+			text-align: left;
+			height: 20px;
+		}
+		&__options {
+			display: inline-flex;
+			flex-direction: column;
+			gap: 0px;
+		}	
+	}
+
+	.description-option {
+		height: 20px;
+		font-size: 14px;
+		line-height: 15.4px;
 	}
 }
 </style>
