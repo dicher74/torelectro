@@ -1,8 +1,10 @@
 import { createStore } from 'vuex'
 
-
 export const store = createStore({
 	mutations: {
+		setDisplay(state, display) {
+			state.display = display
+		},
 		changeDialogMode(state, payload) {
 			state.dialogList = payload.mode
 			console.log(state.dialogMode)
@@ -63,6 +65,7 @@ export const store = createStore({
 	},
 	state() {
 		return {
+			display: 'ipad',
 			dialogList: [],
 			currentProduct: null,
 			currentVariety: null,
@@ -574,3 +577,6 @@ export const store = createStore({
 		}
 	},
 })
+
+//console.log(window.innerWidth)
+store.commit('setDisplay', 'ipad')

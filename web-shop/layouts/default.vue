@@ -6,13 +6,24 @@
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .content-wrapper {
-	width: 1280px;
-	padding: 20px 50px 0;
-	height: max(100%, 100vh);
-	box-sizing: border-box;
-	align-self: stretch;
+		padding: 20px 50px 0;
+		height: max(100%, 100vh);
+		box-sizing: border-box;
+		align-self: stretch;
+	}
+@media screen and (width >= $desktop) {
+	.content-wrapper {
+		width: $desktop;
+	}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.content-wrapper {
+		width: $ipad;
+		padding: 20px 20px 0;
+	}
 }
 .content-wrapper-global {
 	display: inline-flex;

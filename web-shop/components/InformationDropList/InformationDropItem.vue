@@ -10,8 +10,8 @@
 					:key="`description-par_num-${descriptionParNum}`">
 					{{ descriptionPar }}
 				</p>
-				<a href="https://t.me/humanfromthefuture" target="_blank">
-					<p v-if="theme === 'black'" class="information-drop-item__message">
+				<a v-if="theme === 'black'" href="https://t.me/humanfromthefuture" target="_blank" >
+					<p class="information-drop-item__message">
 						Написать нам в мессенджер «Telegram»
 					</p>
 				</a>
@@ -117,6 +117,7 @@ export default {
 }
 
 .information-drop-item__title {
+	white-space: nowrap;
 	&_theme-black {
 		color: #FFFFFF;
 	}

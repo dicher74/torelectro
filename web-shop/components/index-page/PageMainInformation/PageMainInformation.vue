@@ -89,4 +89,21 @@ export default {
 		line-height: 15.4px;
 	}
 }
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.main-information {
+		&__title {
+			font-size: 30px;
+			line-height: 33px;
+		}
+		&__body {
+			font-size: 18px;
+			line-height: 19.8px;
+		}
+		&__extra-information {
+			font-size: 12px;
+			line-height: 13.2px;
+		}
+	}
+}
 </style>

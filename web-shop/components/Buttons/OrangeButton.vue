@@ -46,9 +46,18 @@ export default {
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: $desktop) {
 	.orange-button:hover {
 			background-color: rgba(255, 61, 0, 0.75);
+		}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.orange-button{
+			&__text {
+				font-size: 16px;
+				line-height: 17.6px;
+			}
 		}
 }
 </style>

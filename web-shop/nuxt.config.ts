@@ -13,6 +13,15 @@ export default defineNuxtConfig({
       ]
 	  },
   },
-	css: ["./assets/css/master.css"],
+	vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/assets/css/global.scss";',
+                },
+            },
+        },
+	},
+	css: ['./assets/css/master.css'],
 	ssr: true,
 })

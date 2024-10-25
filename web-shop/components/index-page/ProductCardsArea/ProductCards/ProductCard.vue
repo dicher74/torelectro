@@ -46,6 +46,7 @@ export default {
 	background-color: #FFFFFF;
 	border-radius: 5px;
 	height: 580px;
+	width: 380px;
 	box-sizing: border-box;
 
 	&__image {

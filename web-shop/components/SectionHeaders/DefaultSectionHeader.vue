@@ -17,7 +17,6 @@ export default {
 
 <style scoped lang="scss">
 .default-section-header {
-	width: 820px;
 	display: flex;
 	position: relative;
 	top: 1px;
@@ -32,4 +31,12 @@ export default {
 	}
 }
 
+@media screen and (width >= $ipad) and (width <= $desktop) {
+	.default-section-header{
+		&__text {
+			font-size: 24px;
+			list-style: 26.4px
+		}
+	}
+}
 </style>

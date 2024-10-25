@@ -24,12 +24,6 @@ export default {
 		}
 	},
 
-	data() {
-		return {
-			cardsAmount: 3,
-		}
-	},
-
 	computed: {
 		cards() {
 			let cards = store.state.productCards
@@ -59,5 +53,11 @@ export default {
 	display: inline-flex;
 	gap: 20px;
 	transition: all 1s;
+}
+
+@media screen and (width >= 820px) and (width <= 1280px) {
+	.product-cards__container {
+		scroll-snap-type: x mandatory;
+	}
 }
 </style>

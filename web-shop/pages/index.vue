@@ -10,6 +10,7 @@
 	<DefaultFooter />
 
 	<DialogsArea v-if="dialogList.length" />
+	<PolicyDisclaimer />
 </template>
 
 <script>
@@ -23,6 +24,7 @@ import PageMainInformation from '~/components/index-page/PageMainInformation/Pag
 import PopularQuestionsArea from '~/components/index-page/PopularQuestionsArea/PopularQuestionsArea.vue';
 import PresentationBanner from '~/components/index-page/PresentationBanner/PresentationBanner.vue';
 import ProductCardsArea from '~/components/index-page/ProductCardsArea/ProductCardsArea.vue';
+import PolicyDisclaimer from '~/components/PolicyDisclaimer.vue';
 import { store } from '~/store';
 
 export default {
@@ -37,6 +39,7 @@ export default {
 		InterestingNuansionsArea,
 		DefaultFooter,
 		DialogsArea,
+		PolicyDisclaimer,
 	},
 
 	layout: "default",
