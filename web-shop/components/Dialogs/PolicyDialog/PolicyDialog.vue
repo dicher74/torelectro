@@ -104,6 +104,11 @@ export default {
 	&__title {
 		font-size: 24px;
 		line-height: 26.4px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
+		box-sizing: border-box;
+		padding-top: 3px;
 	}
 
 	&__body {
