@@ -1,7 +1,10 @@
 <template>
-	<button class="orange-button" :style="`height: ${height}px; width: ${width}px`">
+	<div class="button-container" :style="`height: ${height}px; width: ${width}px`">
+		<div v-if="background" class="button-container__background" :style="`height: ${height}px; width: ${width}px`"></div>
+		<button class="orange-button" :style="`height: ${height}px; width: ${width}px`">
 		<p class="orange-button__text">{{ text }}</p>
 	</button>
+	</div>
 </template>
 
 <script>
@@ -19,15 +22,30 @@ export default {
 			type: Number,
 			deafult: 0,
 		},
+		background: {
+			type: Boolean,
+			default: false
+		}
 	}
 }
 </script>
 
 <style scoped lang="scss">
+.button-container {
+	display: inline-flex;
+	flex-direction: column;
+	&__background {
+		background-color: white;
+		position: absolute;
+		border-radius: 5px;
+	}
+}
+
 .orange-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	position: absolute;
 
 	background-color: #FF3D00;
 	border: none;
@@ -36,7 +54,7 @@ export default {
 	padding-top: 0.15em;
 
 	cursor: pointer;
-	transition: background-color 0.6s;
+	transition: opacity 0.6s;
 
 	&__text {
 		color: #FFFFFF;
@@ -48,7 +66,7 @@ export default {
 
 @media screen and (min-width: $desktop) {
 	.orange-button:hover {
-			background-color: rgba(255, 61, 0, 0.75);
+			opacity: 0.75;
 		}
 }
 

@@ -10,12 +10,14 @@
 				:text="buttonText" 
 				:width="380" 
 				:height="60"
+				:background="true"
 				@click="showConsultationDialog" />
 			<OrangeButton 
 				class="main-information__button_phone"
 				:text="buttonText" 
 				:width="350" 
 				:height="60"
+				:background="true"
 				@click="showConsultationDialog" />
 			<div class="main-information__extra-information">
 				{{ extraInfo }}
