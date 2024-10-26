@@ -2,14 +2,12 @@ import { createStore } from 'vuex'
 
 export const store = createStore({
 	mutations: {
-		setDisplay(state, display) {
-			state.display = display
-		},
 		changeDialogMode(state, payload) {
 			state.dialogList = payload.mode
 			console.log(state.dialogMode)
 			if (payload.mode.includes('product')) {
 				state.currentProduct = payload.card
+				console.log(state.currentProduct.id)
 				state.currentVariety = Object.keys(payload.card.varieties)[0]
 			}
 		},
@@ -17,9 +15,21 @@ export const store = createStore({
 			state.dialogList = []
 		},
 		showNextCard(state) {
+			const cards = state.productCards.filter((elem) => elem.category === state.filter)
 			const currentId = state.currentProduct.id
-			const cardAmount = state.productCards.length
-			state.currentProduct = state.productCards[currentId % cardAmount]
+			console.log(currentId)
+			let index = 0
+			for (const product of cards) {
+				index++;
+				if (product.id == currentId) {
+					break;
+				}
+			}
+			if (index >= cards.length) {
+				index = 0
+			}
+			console.log(index)
+			state.currentProduct = cards[index]
 			state.currentVariety = Object.keys(state.currentProduct.varieties)[0]
 		},
 		changeVariety(state, key) {
@@ -66,7 +76,6 @@ export const store = createStore({
 	},
 	state() {
 		return {
-			display: 'ipad',
 			dialogList: [],
 			currentProduct: null,
 			currentVariety: null,
@@ -579,6 +588,3 @@ export const store = createStore({
 		}
 	},
 })
-
-//console.log(window.innerWidth)
-store.commit('setDisplay', 'ipad')
