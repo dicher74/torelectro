@@ -1,7 +1,7 @@
 <template>
 	<div class="product-cards">
 		<div class="product-cards__container" :style="`transform: translate(${translateX}px, 0)`">
-			<ProductCard
+			<ProductCard class="product-card"
 				v-for="card, cardNum in currentCards" 
 				:key="`product-card_num-${cardNum}`"
 				:description="card" />
@@ -47,12 +47,22 @@ export default {
 <style scoped>
 .product-cards {
 	width: 100%;
-	overflow: hidden;
+	overflow: scroll;
+	scroll-snap-type: x mandatory;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.product-cards::-webkit-scrollbar {
+	display: none;
 }
 .product-cards__container {
 	display: inline-flex;
 	gap: 20px;
 	transition: all 1s;
+	scroll-snap-type: x mandatory;
+}
+.product-card {
+	scroll-snap-align: start;
 }
 
 @media screen and (width >= 820px) and (width <= 1280px) {

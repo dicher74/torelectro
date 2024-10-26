@@ -2,7 +2,7 @@
 	<section class="product-cards-area">
 		<DefaultSectionHeader :text="title"class="product-cards__title"/>
 		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
-		<ProductCards :firstCard="firstCard"/>
+		<ProductCards :firstCard="firstCard" @updateFirst="updateFirst"/>
 		<ScrollProgress :choosed="firstCard" :cards-amount="cardsAmount"/>
 	</section>
 </template>
@@ -51,6 +51,10 @@ export default {
 		changeFilter() {
 			this.firstCard = 0
 		},
+		updateFirst(index) {
+			this.firstCard = index
+			console.log('update first!')
+		}
 	},
 }
 </script>
