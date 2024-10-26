@@ -159,6 +159,7 @@ export default {
 	}
 	&__item_basket {
 		background-color: #FF3D00;
+		transition: all 0.3s;
 		cursor: pointer;
 	}
 	&__item_red_odd-1 {
@@ -169,6 +170,14 @@ export default {
 	}
 	&__item_usual_odd-1 {
 		background-color: rgba(245, 245, 245, 0.5);
+	}
+}
+
+@media screen and (hover: hover) {
+	.product-table {
+		&__item_basket:hover {
+			opacity: 0.5;
+		}
 	}
 }
 </style>

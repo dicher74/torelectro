@@ -52,13 +52,31 @@ export default {
 
 	methods: {
 		checkIfOutsideDialog(event) {
+			if (!event.target.classList) {
+				return;
+			}
+			console.log(event.target.classList)
 			if (!this.dialogList.length) {
 				event.stopPropagation()
 				return;
 			}
-			if (!event.target.classList.contains('dialog__window-container')) {
-				store.commit('closeDialog')
+			const dialogs = document.querySelectorAll('.dialog__window')
+			for (const dialog of dialogs) {
+				console.log('dialog!')
+				const dialogRect = dialog.getBoundingClientRect()
+				console.log(dialogRect)
+				let out = false
+				if (event.clientX < dialogRect.left || event.clientX > dialogRect.right) {
+					out = true
+				}
+				if (event.clientY < dialogRect.top || event.clientY > dialogRect.bottom) {
+					out = true
+				}
+				if (!out) {
+					return;
+				}
 			}
+			store.commit('closeDialog')
 		}
 	},
 
