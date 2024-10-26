@@ -1,6 +1,8 @@
 <template>
-	<DefaultFooterDestop class="default-footer_desktop" />
-	<DefaultFooterPhone class="default-footer_phone"/>
+	<ClientOnly>
+		<DefaultFooterDestop class="default-footer_desktop" />
+		<DefaultFooterPhone class="default-footer_phone"/>
+	</ClientOnly>
 </template>
 
 

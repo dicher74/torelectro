@@ -375,6 +375,7 @@ export const store = createStore({
 					id: 13,
 					category: 'У-КГ',
 					title: 'Удлинители силовые на колодке',
+					fullTitle: 'Удлинители силовые на колодке',
 					grounding: true,
 					protection: "IP44",
 					length: [10, 20],

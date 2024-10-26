@@ -96,11 +96,6 @@ export default {
 }
 
 .input-area {
-	&__placeholder {
-		font-size: 14px;
-		color: #909090;
-		line-height: 15.4px;
-	}
 	&__input-wrapper {
 		display: inline-flex;
 		font-size: 18px;
@@ -122,12 +117,14 @@ export default {
 		font-size: 18px;
 		line-height: 19.8px;
 		font-family: Evolventa;
+		padding-top: 3px;
+		box-sizing: border-box;
 	}
 	&__placeholder {
 		font-size: 18px;
 		line-height: 19.8px;
 		color: #101010;
-		margin-top: 1px;
+		margin-top: 3px;
 	}
 }
 

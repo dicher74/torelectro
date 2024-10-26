@@ -3,6 +3,7 @@
 		<DefaultSectionHeader :text="title" style="top: 10px;"/>
 		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
 		<ProductCards :firstCard="firstCard"/>
+		<ScrollProgress :choosed="firstCard" :cards-amount="cardsAmount"/>
 	</section>
 </template>
 
@@ -10,6 +11,7 @@
 import DefaultSectionHeader from '~/components/SectionHeaders/DefaultSectionHeader.vue';
 import Filters from './Filters/Filters.vue';
 import ProductCards from './ProductCards/ProductCards.vue';
+import ScrollProgress from './ScrollProgress.vue';
 
 import { store } from "~/store"
 
@@ -18,11 +20,23 @@ export default {
 		DefaultSectionHeader,
 		Filters,
 		ProductCards,
+		ScrollProgress,
 	},
 	data() {
 		return {
 			title: "Каталог со всеми категориями нашего ассортимента",
 			firstCard: 0,
+		}
+	},
+	computed: {
+		cardsAmount() {
+			const filterName = store.state.filter
+			let cards = store.state.productCards
+			if (filterName) {
+				cards = store.state.productCards.filter((elem) => elem.category === filterName)
+			}
+			console.log(cards)
+			return cards.length
 		}
 	},
 	methods: {
@@ -36,7 +50,7 @@ export default {
 		},
 		changeFilter() {
 			this.firstCard = 0
-		}
+		},
 	},
 }
 </script>

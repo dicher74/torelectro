@@ -35,6 +35,7 @@ export default {
 
 	background-color: #FF3D00;
 	opacity: 0.5;
+	font-family: Evolventa;
 	cursor: pointer;
 
 	&_active-true {
