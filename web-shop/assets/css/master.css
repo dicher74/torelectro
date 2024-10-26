@@ -14,6 +14,10 @@
 	font-style: normal;
 }
 
+html {
+	scroll-behavior: unset;
+}
+
 body {
 	margin: 0;
 	font-family: Evolventa;

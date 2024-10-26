@@ -52,6 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .click-area {
+	cursor: pointer;
 	height: 60px;
 	width: 1180px;
 	margin-top: -20px;
@@ -59,7 +60,6 @@ export default {
 	position: absolute;
 }
 .information-drop-item {
-	cursor: pointer;
 	height: 60px;
 	box-sizing: border-box;
 	display: inline-flex;
@@ -71,7 +71,6 @@ export default {
 	line-height: 19.8px;
 	overflow: hidden;
 	transition: height 1s;
-	user-select: none;
 
 	&_show-true {
 		height: auto;
@@ -133,7 +132,7 @@ export default {
 	white-space: nowrap;
 	height: 20px;
 	padding-top: 2px;
-	;
+	user-select: none;
 	&_theme-black {
 		color: #FFFFFF;
 	}

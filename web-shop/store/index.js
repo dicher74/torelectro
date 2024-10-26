@@ -34,14 +34,13 @@ export const store = createStore({
 			}
 		},
 		scrollToTop() {
-			const upAnimation = setInterval(
-				() => {
-					scrollBy(0, -50)
-					if (window.pageYOffset <= 0) {
-						clearInterval(upAnimation)
-					}
-				}, 5
-			)
+			console.log('here')
+			const animation = setInterval(() => {
+				if (window.scrollY <= 0) {
+					clearInterval(animation)
+				}
+				window.scrollTo(0, window.scrollY - 60)
+			}, 15)
 		},
 		scrollToElem(state, id) {
 			console.log('scroll start', id)
@@ -62,6 +61,8 @@ export const store = createStore({
 				}
 			)
 		}
+	},
+	actions: {
 	},
 	state() {
 		return {
