@@ -31,9 +31,6 @@ export default {
 	transform: translate(0, calc(-100% - 5px));
 	border-radius: 5px;
 
-	animation-name: appear;
-	animation-duration: 0.4s;
-
 	&__image {
 		width: 15.94px;
 		height: 15.94px;
