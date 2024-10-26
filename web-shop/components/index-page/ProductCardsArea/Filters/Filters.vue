@@ -75,4 +75,10 @@ export default {
 		cursor: pointer;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.filter-toolbar__scroll-arrow {
+		display: none;
+	};
+}
 </style>

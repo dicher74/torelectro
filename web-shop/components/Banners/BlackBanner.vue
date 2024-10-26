@@ -3,7 +3,16 @@
 		<div class="black-banner__background"></div>
 		<div class="black-banner__content">
 			<p class="black-banner__description" v-html="description"></p>
-			<OrangeButton :width="380" :height="60" :text="buttonText" @click="activated" />
+			<OrangeButton 
+				:width="380" :height="60" 
+				:text="buttonText"
+				class="black-banner__button black-banner__button_desktop" 
+				@click="activated" />
+			<OrangeButton 
+				:width="350" :height="60" 
+				:text="buttonText"
+				class="black-banner__button black-banner__button_phone" 
+				@click="activated" />
 		</div>
 	</section>
 </template>
@@ -62,6 +71,10 @@ export default {
 		color: #FFFFFF;
 		white-space: pre-line;
 	}
+
+	&__button_phone {
+		display: none;
+	}
 }
 
 @media screen and (width < $ipad) {
@@ -69,6 +82,12 @@ export default {
 		&__description {
 			font-size: 18px;
 			line-height: 19.8px;
+		}
+		&__button_desktop {
+			display: none;
+		}
+		&__button_phone {
+			display: block;
 		}
 	}
 }

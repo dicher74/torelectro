@@ -1,51 +1,19 @@
 <template>
-	<footer class="default-footer">
-		<div class="default-footer__background"></div>
-		<div class="default-footer__container">
-			<div class="default-footer__empty-zone"></div>
-			<div class="default-footer__content">
-				<div class="content-column content-column_num-1">
-					<a class="content-column__item" href="#catalog"> Каталог всего ассортимента компании</a>
-					<a class="content-column__item" @click="showDialog(['presentation'])">Презентация для сотрудничества</a>
-					<a class="content-column__item" href="#questions">Популярные вопросы</a>
-				</div>
-				<div class="content-column content-column_num-2">
-					<a class="content-column__item" @click="showDialog(['vacansion', 'anket'])">Вакансия</a>
-					<a class="content-column__item" @click="showDialog(['documentation'])">Документация</a>
-					<a class="content-column__item" @click="showDialog(['contacts'])">Контактная информация</a>
-				</div>
-				<div class="content-column content-column_num-3">
-					<a class="content-column__item_last">+7 999 999 99 99</a>
-					<a class="content-column__item_last">tor@torelektro.ru</a>
-				</div>
-				<a href="https://t.me/humanfromthefuture" target="_blank" class="telegram-icon">
-					<img src="~assets/images/telegram-icon.svg" />
-				</a>
-			</div>
-			<p class="default-footer__disclaimer">
-				{{`Настоящий интернет-сайт, а также вся информация о товарах и об услугах, предоставленная на нём, носит исключительно
-				информационный характер и ни при каких условиях не является офертой, определяемой действующим российским законодательством`}}
-			</p>
-			<div class="default-footer__extra-information">
-				<a class="extra-information__item extra-information__item_num-1" @click="showDialog(['policy'])">
-					Политика конфиденциальности</a>
-				<a class="extra-information__item extra-information__item_num-2">ООО «ТОРЭЛЕКТРО» · 123456789012345</a>
-				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
-			</div>
-			<div class="default-footer__map-area">
-				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A75
-						4a2e491871d03e955adbe14bfe277b69db029e6128f126b626fba6d034bcc4
-						&amp;source=constructor" width="1180" height="240" frameborder="0"></iframe>
-			</div>
-		</div>
-	</footer>
+	<DefaultFooterDestop class="default-footer_desktop" />
+	<DefaultFooterPhone class="default-footer_phone"/>
 </template>
 
 
 <script>
 import { store } from '~/store';
+import DefaultFooterDestop from './DefaultFooterDestop.vue';
+import DefaultFooterPhone from './DefaultFooterPhone.vue';
 
 export default {
+	components: {
+		DefaultFooterDestop,
+		DefaultFooterPhone,
+	},
 	methods: {
 		showDialog(mode) {
 			store.commit("changeDialogMode", { mode: mode })
@@ -55,171 +23,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.default-footer {
-	width: 100%;
-	box-sizing: border-box;
-	background-color: #101010;
-	margin-top: 150px;
-	display: inline-flex;
-
-	&__background {
-		background-color: #101010;
-		width: 100vw;
-		height: 545px;
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-	}
-	&__container {
-		width: 1180px;
-		box-sizing: border-box;
-		position: absolute;
-		display: inline-flex;
-		flex-direction: column;
-		gap: 30px;
-		padding: 60px 0 50px 0;
-	}
-	&__empty-zone {
-		background-color: #F0F0F0;
-		width: 380px;
-		height: 40px;
-		border-radius: 5px;
-	}
-	&__content {
-		z-index: 1;
-		display: inline-flex;
-	}
-	&__disclaimer {
-		white-space: pre-line;
-		color: #505050;
-		line-height: 17.6px;
-		height: 35px;
-		white-space: pre-line;
-	}
-	&__extra-information {
-		display: inline-flex;
-	}
-	&__map-area {
-		height: 150px;
-		background-color: #F0F0F0;
-		border-radius: 5px;
-		overflow: hidden;
-	}
-}
-
-.content-column {
-	display: inline-flex;
-	flex-direction: column;
-	gap: 5px;
-
-	&_num-2 {
-		position: absolute;
-		margin-left: 400px;
-	}
-	&_num-3 {
-		position: absolute;
-		margin-left: 800px;
-	}
-
-	&__item {
-		cursor: pointer;
-		font-size: 16px;
-		color: #909090;
-		line-height: 17.6px;
-		height: 20px;
-		text-decoration: none;
-	}
-
-	&__item_last {
-		font-size: 18px;
-		color: #FFFFFF;
-		line-height: 19.8px;
-	}
-}
-
-.extra-information__item {
-	color: #505050;
-	line-height: 17.6px;
-	height: 20px;
-
-
-	&_num-1 {
-		cursor: pointer;
-	}
-	&_num-2 {
-		position: absolute;
-		margin-left: 400px;
-	}
-	&_num-3 {
-		position: absolute;
-		margin-left: 800px;
-		font-family: RAYDIS;
-		font-weight: 700;
-	}
-}
-
-.telegram-icon {
-	margin-left: auto;
-	width: 30px;
-	height: 30px;
-	margin-top: -5px;
+.default-footer_phone {
+	display: none;
 }
 
 @media screen and (width < $ipad) {
-	.telegram-icon {
-		position: absolute;
+	.default-footer_phone {
+		display: inline-flex;
 	}
-	.default-footer {
-		&__container {
-			padding: 40px 0px;
-			width: 350px;
-		}
-		&__content {
-			display: inline-flex;
-			flex-direction: column;
-			gap: 40px;
-		}
-		&__empty-zone {
-			width: 350px;
-			height: 40px;
-		}
-		&__background {
-			height: 900px;
-		}
-		&__disclaimer {
-			font-size: 14px;
-			line-height: 15.4px;
-			white-space: wrap;
-			height: 90px;
-		}
-		&__extra-information {
-			flex-direction: column;
-		}
-	}
-	.extra-information__item {
-		&_num-2 {
-			position: static;
-			margin-left: 0;
-		}
-		&_num-3 {
-			position: static;
-			margin-left: 0;
-		}
-	}
-	.content-column {
-		gap: 5px;
-		&__item {
-			white-space: nowrap;
-			font-size: 14px;
-			line-height: 15.4px;
-		}
-		&_num-2 {
-			margin-left: 0;
-			position: static;
-		}
-		&_num-3 {
-			margin-left: 0;
-			position: static;
-		}
+	.default-footer_desktop {
+		display: none;
 	}
 }
 </style>

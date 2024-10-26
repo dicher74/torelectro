@@ -5,10 +5,18 @@
 			<div class="main-information__body">
 				<p class="body__text"> {{ body }} </p>
 			</div>
-			<OrangeButton @click="showConsultationDialog"
+			<OrangeButton 
+				class="main-information__button_desktop"
 				:text="buttonText" 
 				:width="380" 
-				:height="60" />
+				:height="60"
+				@click="showConsultationDialog" />
+			<OrangeButton 
+				class="main-information__button_phone"
+				:text="buttonText" 
+				:width="350" 
+				:height="60"
+				@click="showConsultationDialog" />
 			<div class="main-information__extra-information">
 				{{ extraInfo }}
 			</div>
@@ -88,7 +96,11 @@ export default {
 		text-align: center;
 		line-height: 15.4px;
 	}
+	&__button_phone {
+		display: none;
+	}
 }
+
 
 @media screen and (width >= $ipad) and (width < $desktop) {
 	.main-information {
@@ -120,6 +132,12 @@ export default {
 		}
 		&__extra-information {
 			width: 350px;
+		}
+		&__button_desktop {
+			display: none;
+		}
+		&__button_phone {
+			display: block;
 		}
 	}
 }

@@ -2,12 +2,23 @@
 	<div class="information-drop-list">
 		<InformationDropItem 
 			v-for="item, itemNum in items"
-			:key="`information-frop-list__item_num-${itemNum}`"
-			:title="item.title"
-			:description="item.description"
+			:key="`information-frop-list__item_num-${itemNum}_desktop`"
+			:title="item.title.phone"
+			:description="item.description.phone"
 			:theme="theme"
-			:showMode="active === item.title"
-			@click="choose(item.title)"
+			:showMode="active === item.title.phone"
+			class="information-drop-item_phone"
+			@click="choose(item.title.phone)"
+			/>
+		<InformationDropItem 
+			v-for="item, itemNum in items"
+			:key="`information-frop-list__item_num-${itemNum}_phone`"
+			:title="item.title.desktop"
+			:description="item.description.desktop"
+			:theme="theme"
+			:showMode="active === item.title.desktop"
+			class="information-drop-item_desktop"
+			@click="choose(item.title.desktop)"
 			/>
 	</div>
 </template>
@@ -46,11 +57,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .information-drop-list {
 	width: 100%;
 	display: inline-flex;
 	flex-direction: column;
 	gap: 10px;
+}
+
+.information-drop-item_phone {
+	display: none;
+}
+
+@media screen and (width < $ipad) {
+	.information-drop-item_phone {
+		display: inline-flex;
+	}
+	.information-drop-item_desktop {
+		display: none;
+	}
 }
 </style>

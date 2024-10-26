@@ -12,7 +12,16 @@
 				</p>
 			</div>
 		</div>
-		<OrangeButton text="Посмотреть" :width="340" :height="60" class="product-card__button" @click="showCard"/>
+		<OrangeButton 
+			text="Посмотреть" 
+			:width="340" :height="60" 
+			class="product-card__button product-card__button_desktop" 
+			@click="showCard"/>
+		<OrangeButton 
+			text="Посмотреть" 
+			:width="320" :height="60" 
+			class="product-card__button product-card__button_phone" 
+			@click="showCard"/>
 	</div>
 </template>
 
@@ -64,6 +73,9 @@ export default {
 	&__button {
 		margin-top: 22px;
 	}
+	&__button_phone {
+		display: none;
+	}
 }
 
 .description {
@@ -105,6 +117,12 @@ export default {
 		}
 		&__button {
 			margin-top: 15px;
+		}
+		&__button_desktop {
+			display: none;
+		}
+		&__button_phone {
+			display: block;
 		}
 	}
 

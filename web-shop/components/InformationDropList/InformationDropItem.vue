@@ -95,8 +95,9 @@ export default {
 	&__show-button {
 		position: absolute;
 		align-self: end;
-		width: 24.38px;
-		height: 24.38px;
+		width: 30px;
+		height: 30px;
+		margin-top: -5px;
 		cursor: pointer;
 	}
 	&__show-button_show-true {
@@ -118,6 +119,8 @@ export default {
 
 .information-drop-item__title {
 	white-space: nowrap;
+	height: 20px;
+	;
 	&_theme-black {
 		color: #FFFFFF;
 	}
@@ -130,6 +133,7 @@ export default {
 	display: inline-flex;
 	flex-direction: column;
 	gap: 20px; 
+	white-space: pre-line;
 }
 .information-drop-item__description-par {
 	line-height: 19.8px;
@@ -146,7 +150,7 @@ export default {
 		max-height: 60px;
 	}
 	to {
-		max-height: 300px;
+		max-height: 450px;
 	}
 }
 @keyframes up {
@@ -179,10 +183,36 @@ export default {
 	.information-drop-item {
 		font-size: 16px;
 		line-height: 16px;
+		padding: 15px;
+		&__description {
+			margin-top: 20px;
+			gap: 10px;
+		}
+		&__content {
+			gap: 0px;	
+		}
+		&__show-button {
+			margin-top: 0;
+		}
+		&__content-separator_theme-white {
+			width: 335px;
+		}
+		&__content-separator_theme-black {
+			width: 335px;
+		}
 	}
-	.information-drop-item__title {
-		white-space: wrap;
-		height: 30px;
+	.information-drop-item {
+		&__title {
+			white-space: pre-line;
+			height: 60px;
+			display: inline-flex;
+			align-items: center;
+			box-sizing: border-box;
+			margin-top: -15px;
+		}
+		&__description {
+			white-space: pre-line;
+		}
 	}
 }
 </style>
