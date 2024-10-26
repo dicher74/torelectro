@@ -7,8 +7,8 @@
 			:description="item.description.phone"
 			:theme="theme"
 			:showMode="active === item.title.phone"
-			class="information-drop-item_phone"
-			@click="choose(item.title.phone)"
+			class="information-drop-item information-drop-item_phone"
+			@choose="choose(item.title.phone)"
 			/>
 		<InformationDropItem 
 			v-for="item, itemNum in items"
@@ -17,8 +17,8 @@
 			:description="item.description.desktop"
 			:theme="theme"
 			:showMode="active === item.title.desktop"
-			class="information-drop-item_desktop"
-			@click="choose(item.title.desktop)"
+			class="information-drop-item information-drop-item_desktop"
+			@choose="choose(item.title.desktop)"
 			/>
 	</div>
 </template>

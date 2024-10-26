@@ -1,6 +1,6 @@
 <template>
-	<div :class="`information-drop-item information-drop-item_show-${showMode} information-drop-item_theme-${theme}`"
-	@click="changeShowMode">
+	<div :class="`information-drop-item information-drop-item_show-${showMode} information-drop-item_theme-${theme}`">
+		<div class="click-area" @click="choose"></div>
 		<div class="information-drop-item__content">
 			<p :class="`information-drop-item__title information-drop-item__title_theme-${theme}`"> {{ title }} </p>
 			<hr :class="`information-drop-item__content-separator_theme-${theme}`"/>
@@ -42,10 +42,22 @@ export default {
 			default: false,
 		}
 	},
+	methods: {
+		choose() {
+			this.$emit('choose')
+		}
+	}
 }
 </script>
 
 <style lang="scss" scoped>
+.click-area {
+	height: 60px;
+	width: 1180px;
+	margin-top: -20px;
+	margin-left: -20px;
+	position: absolute;
+}
 .information-drop-item {
 	cursor: pointer;
 	height: 60px;
@@ -179,8 +191,17 @@ export default {
 		transform: rotate(0deg);
 	}
 }
-
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.click-area {
+		width: 780px;
+	}
+}
 @media screen and (width < $ipad) {
+	.click-area {
+		width: 350px;
+		margin-top: -15px;
+		margin-left: -15px;
+	}
 	.information-drop-item {
 		font-size: 16px;
 		line-height: 16px;
