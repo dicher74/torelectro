@@ -26,7 +26,7 @@ export default {
 
 	padding: 10px 15px 10px 10px;
 	background: rgba(255, 61, 0, 0.75);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(3px);
 	position: absolute;
 	transform: translate(0, calc(-100% - 5px));
 	border-radius: 5px;
