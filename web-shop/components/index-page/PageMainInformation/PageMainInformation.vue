@@ -1,7 +1,8 @@
 <template>
 	<section class="page-main-information">
 		<div class="main-information">
-			<p class="main-information__title"> {{ title }} </p>
+			<p class="main-information__title main-information__title_desktop"> {{ title }} </p>
+			<p class="main-information__title main-information__title_phone"> {{ titleMobile }} </p>
 			<div class="main-information__body">
 				<p class="body__text"> {{ body }} </p>
 			</div>
@@ -36,6 +37,10 @@ export default {
 	},
 	data() {
 		return {
+			titleMobile: 
+				`Российские удлинители
+				собственного производства
+				по всем стандартам`,
 			title: 
 				`Российские удлинители
 				собственного производства
@@ -79,6 +84,9 @@ export default {
 		font-weight: 700;
 		line-height: 39.6px;
 		margin-top: 3px;
+	}
+	&__title_phone {
+		display: none;
 	}
 	&__body {
 		display: inline-flex;
@@ -124,9 +132,16 @@ export default {
 
 @media screen and (width < $ipad) {
 	.main-information {
+		margin-top: 0px;
 		&__title {
 			font-size: 24px;
 			line-height: 26.4px;
+		}
+		&__title_desktop {
+			display: none;
+		}
+		&__title_phone {
+			display: block;
 		}
 		&__body {
 			font-size: 16px;

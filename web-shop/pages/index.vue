@@ -1,5 +1,6 @@
 <template>
 	<DefaultHeader id="header" />
+	<div class="page-image"></div>
 	<PageMainInformation />
 	<ProductCardsArea id="catalog" />
 	<PresentationBanner id="presentation" />
@@ -85,3 +86,20 @@ export default {
 	}
 }
 </script>
+
+<style scoped lang="scss">
+.page-image {
+	display: none;
+}
+@media screen and (width < $ipad) {
+	.page-image {
+	display: block;
+	width: 350px;
+	height: 370px;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	}	
+}
+</style>

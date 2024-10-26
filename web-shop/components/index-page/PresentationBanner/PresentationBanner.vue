@@ -3,7 +3,7 @@
 		:buttonText="buttonText" 
 		:description="description" 
 		@activated="showPresentationDialog"
-		style="margin-top: 100px;"/>
+		class="presentation-banner"/>
 </template>
 
 <script>
@@ -33,3 +33,15 @@ export default {
 	},
 }
 </script>
+
+<style lang="scss" scoped>
+.presentation-banner {
+	margin-top: 75px;
+}
+
+@media screen and (width < $ipad) {
+	.presentation-banner {
+		margin-top: 100px;
+	}
+}
+</style>

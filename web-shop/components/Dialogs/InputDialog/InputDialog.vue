@@ -144,4 +144,13 @@ export default {
 		line-height: 15.4px;
 	}
 }
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.presentation-dialog {
+		width: 100%;
+	}
+	.policy-text {
+		width: 380px;
+	}
+}
 </style>

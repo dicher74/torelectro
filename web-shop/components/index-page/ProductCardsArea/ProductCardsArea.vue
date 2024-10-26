@@ -1,6 +1,6 @@
 <template>
 	<section class="product-cards-area">
-		<DefaultSectionHeader :text="title" style="top: 10px;"/>
+		<DefaultSectionHeader :text="title"class="product-cards__title"/>
 		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
 		<ProductCards :firstCard="firstCard"/>
 		<ScrollProgress :choosed="firstCard" :cards-amount="cardsAmount"/>
@@ -63,10 +63,24 @@ export default {
 	margin-top: 250px;
 	width: 100%;
 }
-
+.product-cards__title {
+	top: 10px;
+}
 @media screen and (width < $ipad) {
 	.product-cards-area {
 		margin-top: 100px;
+	}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.product-cards-area {
+		margin-top: 270px;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.product-cards__title {
+		top: 0px;
 	}
 }
 </style>

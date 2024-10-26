@@ -110,7 +110,9 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 30px;
-		padding: 60px 0 20px 0;
+		height: 545px;
+		box-sizing: border-box;
+		padding: 60px 0 50px 0;
 	}
 	&__empty-zone {
 		background-color: #F0F0F0;
