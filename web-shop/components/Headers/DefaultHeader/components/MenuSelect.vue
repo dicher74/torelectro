@@ -67,11 +67,11 @@ export default {
 		&:before {
 			content: '';
       		display: inline-block;
-			width: 7px;
-			height: 7px;
-			border-radius: 3.5px;
+			width: 8px;
+			height: 8px;
+			border-radius: 100px;
 			margin-left: -20px;
-			margin-top: 8px;
+			margin-top: 7px;
 			background-color: #FF3D00;
 			text-decoration: none;
 			position: absolute;
