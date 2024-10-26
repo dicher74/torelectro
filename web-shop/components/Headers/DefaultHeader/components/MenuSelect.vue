@@ -20,9 +20,11 @@ import { store } from '~/store';
 export default {
 	methods: {
 		showDocumentationDialog() {
+			window.event.stopPropagation()
 			store.commit('changeDialogMode', {mode: ['documentation']})
 		},
 		showContactsDialog() {
+			window.event.stopPropagation()
 			store.commit('changeDialogMode', {mode: ['contacts']})
 		}
 	}

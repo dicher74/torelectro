@@ -34,11 +34,11 @@ export const store = createStore({
 			}
 		},
 		scrollToTop() {
-			console.log('here')
 			const animation = setInterval(() => {
 				if (window.scrollY <= 0) {
 					clearInterval(animation)
 				}
+				console.log('scroll')
 				window.scrollTo(0, window.scrollY - 60)
 			}, 15)
 		},

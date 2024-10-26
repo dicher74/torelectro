@@ -25,6 +25,7 @@ export default {
 	},
 	methods: {
 		showConsultationDialog() {
+			window.event.stopImmediatePropagation()
 			store.commit('changeDialogMode', {mode: ['consultation']})
 		}
 	}

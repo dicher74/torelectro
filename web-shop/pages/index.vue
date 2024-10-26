@@ -48,6 +48,22 @@ export default {
 		dialogList() {
 			return store.state.dialogList
 		}
+	},
+
+	methods: {
+		checkIfOutsideDialog(event) {
+			if (!this.dialogList.length) {
+				event.stopPropagation()
+				return;
+			}
+			if (!event.target.classList.contains('dialog__window-container')) {
+				store.commit('closeDialog')
+			}
+		}
+	},
+
+	mounted() {
+		document.addEventListener('click', this.checkIfOutsideDialog)
 	}
 }
 </script>

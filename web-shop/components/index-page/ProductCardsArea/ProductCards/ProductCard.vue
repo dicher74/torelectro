@@ -41,6 +41,7 @@ export default {
 	},
 	methods: {
 		showCard() {
+			window.event.stopPropagation()
 			store.commit('changeDialogMode', {mode: ['product', 'consultation'], card: this.description})
 		}
 	}

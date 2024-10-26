@@ -27,6 +27,7 @@ export default {
 	},
 	methods: {
 		showPresentationDialog() {
+			window.event.stopPropagation()
 			store.commit('changeDialogMode', { mode: ['presentation'] })
 		},
 	},
