@@ -43,6 +43,7 @@ export default {
 		opacity: 1;
 	}
 	&__value {
+		margin-top: 8px;
 		font-size: 16px;
 		color: #FFFFFF;
 	}
