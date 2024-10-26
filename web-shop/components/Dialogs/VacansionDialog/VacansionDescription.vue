@@ -56,4 +56,10 @@ export default {
 		line-height: 17.6px;
 	} 
 }
+
+@media screen and (width > $ipad) and (width <= $desktop) {
+	.vacansion-description {
+		width: 410px;
+	}
+}
 </style>

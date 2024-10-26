@@ -89,4 +89,10 @@ export default {
 		opacity: 1;
 	}
 }
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.dialog__window {
+		width: 780px;
+	}
+} 
 </style>

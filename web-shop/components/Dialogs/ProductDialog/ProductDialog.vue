@@ -221,4 +221,12 @@ export default {
 	line-height: 15.4px;
 	color: #909090
 }
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.product {
+		&__image {
+			display: none;
+		}
+	}
+}
 </style>

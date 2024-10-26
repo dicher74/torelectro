@@ -2,11 +2,16 @@
 	<div class="contact-info-dialog">
 		<p class="contact-info-dialog__title">Контактная информация</p>
 		<div class="contact-info-dialog__body">
-			<div class="map-container">
+			<div class="map-container_desktop">
 				<iframe src="https://yandex.ru/map-widget/v1/?um=cons
 				tructor%3A754a2e491871d03e955adbe14bfe277b69db029e6128f126b626f
 				ba6d034bcc4&amp;source=constructor" width="760" height="470" frameborder="0">
-			</iframe>
+				</iframe>
+			</div>
+			<div class="map-container_ipad">
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A754a2e49
+				1871d03e955adbe14bfe277b69db029e6128f126b626fba6d034bcc4&amp;source=constructor" 
+				width="320" height="470" frameborder="0"></iframe>
 			</div>
 			<div class="info-blocks">
 				<div class="info-blocks__block info-blocks__block_num-1">
@@ -61,12 +66,15 @@ export default {
 	cursor: pointer;
 	transition: all 0.3s;
 }
-.map-container {
+.map-container_desktop {
 	overflow: hidden;
 	width: 760px;
 	height: 470px;
 	background-color: rgba(245, 245, 245, 1);
 	border-radius: 5px;
+}
+.map-container_ipad {
+	display: none;
 }
 .contact-info-dialog {
 	display: inline-flex;
@@ -135,6 +143,18 @@ export default {
 @media screen and (hover: hover) {
 	.telegram-icon:hover {
 		opacity: 0.75;
+	}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.map-container_ipad {
+		overflow: hidden;
+		border-radius: 5px;
+		width: 310px;
+		display: block;
+	}
+	.map-container_desktop {
+		display: none;
 	}
 }
 </style>

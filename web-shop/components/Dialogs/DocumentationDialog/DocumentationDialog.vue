@@ -78,6 +78,15 @@
 		background-color: rgba(16, 16, 16, 1);
 		justify-content: center;
 		cursor: pointer;
+		padding-top: 0px;
+	}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.load-area {
+		&__item {
+			grid-template-columns: 325px 130px 130px 140px;
+		}
 	}
 }
 </style>

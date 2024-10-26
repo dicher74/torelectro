@@ -4,7 +4,8 @@
 		<div class="vacansion-dialog__body">
 			<div class="dialog-body__right">
 				<VacansionDescription />
-				<ButtonsOrangeButton :width="360" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
+				<ButtonsOrangeButton class="button_desktop" :width="360" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
+				<ButtonsOrangeButton class="button_ipad" :width="410" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
 				<div class="button-area__policy-text policy-text">
 					<p class="policy-text__par_top"> нажимая, вы соглашаетесь </p>
 					<a class="policy-text__policy-link"> с условиями политики конфиденциальности </a>
@@ -72,6 +73,19 @@ export default {
 		color: #3366BB;
 		text-decoration: underline;
 		line-height: 15.4px;
+	}
+}
+
+.button_ipad {
+	display: none;
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.button_ipad {
+		display: flex;
+	}
+	.button_desktop {
+		display: none;
 	}
 }
 </style>
