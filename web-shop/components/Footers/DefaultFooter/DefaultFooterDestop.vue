@@ -121,6 +121,7 @@ export default {
 	}
 
 	&__item {
+		transition: all 0.3s;
 		cursor: pointer;
 		font-size: 16px;
 		color: #909090;
@@ -140,7 +141,7 @@ export default {
 	color: #505050;
 	line-height: 17.6px;
 	height: 20px;
-
+	transition: all 0.3s;
 
 	&_num-1 {
 		cursor: pointer;
@@ -162,5 +163,21 @@ export default {
 	width: 30px;
 	height: 30px;
 	margin-top: -5px;
+	transition: all 0.3s;
+}
+
+@media screen and (hover: hover) {
+	.telegram-icon:hover {
+		opacity: 0.5;
+	};
+	.content-column {
+		&__item:hover {
+
+			color: #FFFFFF;
+		}
+	}
+	.extra-information__item_num-1:hover {
+		color: #909090;
+	}
 }
 </style>

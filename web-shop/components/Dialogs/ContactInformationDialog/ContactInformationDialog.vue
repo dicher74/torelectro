@@ -59,6 +59,7 @@ export default {
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
+	transition: all 0.3s;
 }
 .map-container {
 	overflow: hidden;
@@ -128,6 +129,12 @@ export default {
 	&__item {
 		display: inline-flex;
 		justify-content: space-between;
+	}
+}
+
+@media screen and (hover: hover) {
+	.telegram-icon:hover {
+		opacity: 0.75;
 	}
 }
 </style>
