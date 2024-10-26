@@ -120,6 +120,7 @@ export default {
 .information-drop-item__title {
 	white-space: nowrap;
 	height: 20px;
+	padding-top: 2px;
 	;
 	&_theme-black {
 		color: #FFFFFF;
