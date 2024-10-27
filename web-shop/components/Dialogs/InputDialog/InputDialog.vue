@@ -1,15 +1,16 @@
 <template>
 	<div class="presentation-dialog">
-		<div class="presentation-dialog__title" v-html="text"></div>
+		<div class="presentation-dialog__title"><p v-html="text"></p></div>
 		<div class="presentation-dialog__input-area input-area">
 			<div class="input-area__placeholder">номер сотового телефона</div>
 			<div class="input-area__input-wrapper">
-				<p class="input-area__placeholder">+7</p>
+				<p class="input-area__placeholder-number">+7</p>
 				<input class="input-area__input" :value="phoneNumber" @keydown="phoneFormat($event)"/>
 			</div>
 		</div>
 		<div class="presentation-dialog__button-area button-area">
-			<OrangeButton :text="buttonText" :width="380" :height="58" />
+			<OrangeButton :text="buttonText" :width="380" :height="60" class="presentation-dialog__button_desktop" />
+			<OrangeButton :text="buttonText" :width="320" :height="60" class="presentation-dialog__button_phone" />
 			<div class="button-area__policy-text policy-text">
 				<p class="policy-text__par_top"> нажимая, вы соглашаетесь </p>
 				<a class="policy-text__policy-link"> с условиями политики конфиденциальности </a>
@@ -80,6 +81,8 @@ export default {
 		height: 60px;
 		line-height: 22px;
 		font-size: 20px;
+		display: inline-flex;
+		align-items: center;
 	}
 
 	&__input-area {
@@ -92,6 +95,9 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 10px;
+	}
+	&__button_phone {
+		display: none;
 	}
 }
 
@@ -120,11 +126,16 @@ export default {
 		padding-top: 3px;
 		box-sizing: border-box;
 	}
-	&__placeholder {
+	&__placeholder-number {
 		font-size: 18px;
 		line-height: 19.8px;
 		color: #101010;
-		margin-top: 3px;
+		margin-top: 3.9px;
+	}
+	&__placeholder {
+		color: rgba(144, 144, 144, 1);
+		font-size: 14px;
+		line-height: 15.4px;
 	}
 }
 
@@ -151,6 +162,38 @@ export default {
 	}
 	.policy-text {
 		width: 380px;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.presentation-dialog{
+		width: 100%;
+
+		&__title {
+			font-size: 16px;
+			line-height: 17.6px;
+			width: 320px;
+			height: 60px;
+		}
+		&__button_desktop {
+			display: none;
+		}
+		&__button_phone {
+			display: flex;
+		}
+	}
+	.policy-text {
+		width: 320px;
+	}
+	.input-area {
+		&__input-wrapper {
+			width: 320px;
+			overflow: hidden;
+		}
+		&__placeholder {
+			font-size: 12px;
+			line-height: 13.2px;
+		}
 	}
 }
 </style>
