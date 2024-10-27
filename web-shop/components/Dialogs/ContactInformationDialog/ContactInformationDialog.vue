@@ -160,6 +160,11 @@ export default {
 	.map-container_desktop {
 		display: none;
 	}
+	.info-blocks {
+		&__block {
+			width: 410px;
+		}
+	}
 }
 
 @media screen and (width < $ipad) {

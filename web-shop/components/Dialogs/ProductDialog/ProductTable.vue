@@ -173,6 +173,12 @@ export default {
 	}
 }
 
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.product-table {
+		grid-template-columns: 45px 60px 60px 60px 80px 130px 130px 140px;
+	}
+}
+
 @media screen and (hover: hover) {
 	.product-table {
 		&__item_basket:hover {

@@ -20,6 +20,13 @@
 				:height="60"
 				:background="true"
 				@click="showConsultationDialog" />
+			<OrangeButton 
+				class="main-information__button_ipad"
+				:text="buttonText" 
+				:width="340" 
+				:height="58"
+				:background="true"
+				@click="showConsultationDialog" />
 			<div class="main-information__extra-information">
 				{{ extraInfo }}
 			</div>
@@ -110,6 +117,9 @@ export default {
 	&__button_phone {
 		display: none;
 	}
+	&__button_ipad {
+		display: none;
+	}
 }
 
 
@@ -126,6 +136,13 @@ export default {
 		&__extra-information {
 			font-size: 12px;
 			line-height: 13.2px;
+			width: 340px;
+		}
+		&__button_desktop {
+			display: none;
+		}
+		&__button_ipad {
+			display: flex;
 		}
 	}
 }

@@ -235,6 +235,9 @@ export default {
 			display: none;
 		}
 	}
+	.disclaimer {
+		margin-top: 10px;
+	}
 }
 
 @media  screen and (width < $ipad) {

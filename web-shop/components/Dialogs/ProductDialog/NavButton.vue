@@ -1,7 +1,7 @@
 <template>
 	<button :class="`nav-button nav-button_active-${active}`">
 		<p class="nav-button__value"> {{ text }}  </p>
-		<p class="nav-button__description"> С мощностью </p>
+		<p class="nav-button__description"> c мощностью </p>
 	</button>
 </template>
 
