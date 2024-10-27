@@ -110,8 +110,8 @@ export default {
 	align-items: flex-end;
 
 	&__image {
-		width: 24.38px;
-		height: 24.38px;
+		width: 30px;
+		height: 30px;
 		cursor: pointer;
 	}
 }

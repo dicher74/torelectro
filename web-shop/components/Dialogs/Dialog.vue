@@ -97,4 +97,11 @@ export default {
 		width: 780px;
 	}
 } 
+
+@media screen and (width < $ipad) {
+	.dialog__window {
+		width: 350px;
+		padding: 15px;
+	}
+}
 </style>
