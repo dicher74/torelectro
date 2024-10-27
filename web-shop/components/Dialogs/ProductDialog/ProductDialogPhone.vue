@@ -81,11 +81,17 @@ export default {
 	&__title {
 		font-size: 16px;
 		line-height: 17.6px;
+		height: 20px;
 	}
 	&__content {
 		color: rgba(144, 144, 144, 1);
 		font-size: 14px;
 		line-height: 15.4px;
+	}
+	&__description {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 5px;
 	}
 }
 
