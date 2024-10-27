@@ -1,6 +1,7 @@
 <template>
 	<section class="company-information">
-		<DefaultSectionHeader text="Информация о компании и преимуществах" class="company-information-header"  />
+		<DefaultSectionHeader text="Информация о компании и преимуществах" class="company-information-header_desktop"  />
+		<DefaultSectionHeader text="Информация о компании <br/> и преимуществах" class="company-information-header_phone"  />
 		<div class="information-cards">
 			<InformationCard 
 				v-for="card, cardNum in cards" 
@@ -98,8 +99,12 @@ export default {
 	gap: 20px;
 }
 
-.company-information-header {
+.company-information-header_desktop {
 	top: 11px;
+}
+
+.company-information-header_phone {
+	display: none;
 }
 
 .information-cards {
@@ -123,8 +128,11 @@ export default {
 	.information-cards {
 		gap: 20px;
 	}
-	.company-information-header {
-		top: 0px;
+	.company-information-header_desktop {
+		display: none;
+	}
+	.company-information-header_phone {
+		display: flex;
 	}
 }
 </style>
