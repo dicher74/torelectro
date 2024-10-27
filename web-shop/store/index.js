@@ -57,6 +57,9 @@ export const store = createStore({
 			const scrollAnimation = setInterval(
 				() => {
 					const diff = document.getElementById(id).getBoundingClientRect().top
+					console.log(document.getElementById(id))
+					console.log(document.getElementById(id).getBoundingClientRect())
+					console.log('diff: ', diff)
 					if (Math.abs(diff) < 200) {
 						clearInterval(scrollAnimation)
 					}

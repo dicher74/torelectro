@@ -1,6 +1,6 @@
 <template>
-	<InputDialog :text="title" :buttonText="buttonText" class="input-dialog-consultation_desktop"/>
-	<InputDialog :text="titlePhone" :buttonText="buttonText" class="input-dialog-consultation_phone"/>
+	<InputDialog :text="title" :buttonText="buttonText" class="input-dialog-consultation_desktop" :id="`${id}_desktop`"/>
+	<InputDialog :text="titlePhone" :buttonText="buttonText" class="input-dialog-consultation_phone" :id="`${id}_phone`"/>
 </template>
 
 
@@ -10,6 +10,12 @@ import InputDialog from '../InputDialog/InputDialog.vue';
 export default {
 	components: {
 		InputDialog,
+	},
+	props: {
+		id: {
+			type: String,
+			default: 'consultation-dialog'
+		}
 	},
 	data() {
 		return {

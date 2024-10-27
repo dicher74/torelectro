@@ -119,7 +119,7 @@ export default {
 			return 'розетки'
 		},
 		scrollToConsultation() {
-			store.commit('scrollToElem', "consultation-dialog")
+			store.commit('scrollToElem', "consultation-dialog_desktop")
 		}
 	}
 }

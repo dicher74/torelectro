@@ -5,7 +5,7 @@
 		<div class="dialog__window">
 			<ProductDialog v-if="dialogMode === 'product'" />
 			<PresentationDialog v-if="dialogMode === 'presentation'" id="presentation-dialog"/>
-			<ConsultationDialog v-if="dialogMode === 'consultation'" id="consultation-dialog" />
+			<ConsultationDialog v-if="dialogMode === 'consultation'" />
 			<DialogsDocumentationDialog v-if="dialogMode === 'documentation'" />
 			<DialogsContactInformationDialog v-if="dialogMode === 'contacts'" />
 			<DialogsPolicyDialog v-if="dialogMode === 'policy'" />
