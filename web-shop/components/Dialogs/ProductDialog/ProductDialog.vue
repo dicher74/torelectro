@@ -17,7 +17,10 @@
 					@click="showNextCard"/>
 			</div>
 		</div>
-		<div class="dialog-window__product">
+		<div class="dialog-window__product_phone">
+			<ProductDialogPhone :card="card" :variety="currentVariety" />
+		</div>
+		<div class="dialog-window__product_desktop">
 			<div class="product__image"></div>
 			<div class="product__description">
 				<div class="product-description__title-with-tags"> 
@@ -55,6 +58,7 @@
 import NavButton from './NavButton.vue';
 import ProductTable from './ProductTable.vue';
 import ScrollHint from './ScrollHint.vue';
+import ProductDialogPhone from './ProductDialogPhone.vue';
 import { store } from '~/store';
 
 export default {
@@ -62,6 +66,7 @@ export default {
 		ProductTable,
 		NavButton,
 		ScrollHint,
+		ProductDialogPhone,
 	},
 	data() {
 		return {
@@ -127,11 +132,13 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 	}
-	&__product {
+	&__product_desktop {
 		display: inline-flex;
 		gap: 20px;
 	}
-
+	&__product_phone {
+		display: none;
+	}
 }
 
 .product {
@@ -227,6 +234,20 @@ export default {
 		&__image {
 			display: none;
 		}
+	}
+}
+
+@media  screen and (width < $ipad) {
+	.dialog-window {
+		&__product_desktop {
+			display: none;
+		}
+		&__product_phone {
+			display: flex;
+		}
+	}
+	.navigation-scroll {
+		display: none;
 	}
 }
 </style>

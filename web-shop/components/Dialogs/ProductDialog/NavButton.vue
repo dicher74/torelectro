@@ -60,4 +60,21 @@ export default {
 		opacity: 1;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.nav-button {
+		width: 100px;
+
+		&__value {
+			margin-top: 2px;
+			font-size: 14px;
+			line-height: 15.4px;
+		}
+
+		&__description {
+			font-size: 12px;
+			line-height: 13.2px;
+		}
+	}
+}
 </style>
