@@ -46,9 +46,9 @@ export const store = createStore({
 		scrollToTop() {
 			const animation = setInterval(() => {
 				if (window.scrollY <= 0) {
+					console.log('clear animation')
 					clearInterval(animation)
 				}
-				console.log('scroll')
 				window.scrollTo(0, window.scrollY - 60)
 			}, 15)
 		},
@@ -61,16 +61,17 @@ export const store = createStore({
 					console.log(document.getElementById(id).getBoundingClientRect())
 					console.log('diff: ', diff)
 					if (Math.abs(diff) < 200) {
+						console.log('clear animation!')
 						clearInterval(scrollAnimation)
 					}
 					let scrollDiff
 					if (diff < 0) {
-						scrollDiff = -20
+						scrollDiff = -60
 					}
 					else {
-						scrollDiff = 20
+						scrollDiff = 60
 					}
-					scrollBy(0, scrollDiff)
+					window.scrollTo(0, window.scrollY + scrollDiff)
 				}
 			)
 		}

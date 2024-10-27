@@ -30,7 +30,9 @@
 				<a class="extra-information__item extra-information__item_num-1" @click="showDialog(['policy'])">
 					Политика конфиденциальности</a>
 				<a class="extra-information__item extra-information__item_num-2">ООО «ТОРЭЛЕКТРО» · 123456789012345</a>
-				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
+				<a class="extra-information__item extra-information__item_num-3">
+					<img src="~assets/images/FFTF.svg" />
+				</a>
 			</div>
 			<div class="default-footer__map-area">
 				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A75
@@ -155,6 +157,8 @@ export default {
 		margin-left: 800px;
 		font-family: RAYDIS;
 		font-weight: 700;
+		display: inline-flex;
+		flex-direction: column;
 	}
 }
 

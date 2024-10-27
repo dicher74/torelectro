@@ -39,7 +39,9 @@
 								4289eb737fe3a0e4375abb8b37cce2fd79c9429410&amp;source=constructor" 
 								width="350" height="240" frameborder="0"></iframe>
 				</div>
-				<a class="extra-information__item extra-information__item_num-3">by FFTF</a>
+				<a class="extra-information__item extra-information__item_num-3">
+					<img src="~assets/images/FFTF.svg" />
+				</a>
 			</div>
 		</div>
 	</footer>
