@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<img :class="`information-drop-item__show-button information-drop-item__show-button_show-${showMode}`" 
-			src="~assets/images/cross.svg" />
+			src="~assets/images/cross.svg" @click="choose"/>
 	</div>
 </template>
 
@@ -113,7 +113,7 @@ export default {
 		height: 30px;
 		margin-top: -5px;
 		cursor: pointer;
-		pointer-events: none;
+		transition: all 0.5s;
 	}
 	&__show-button_show-true {
 		transform: rotate(45deg);
@@ -203,6 +203,9 @@ export default {
 	.information-drop-item__message:hover {
 		opacity: 0.5;
 	}
+	.information-drop-item__show-button:hover {
+		opacity: 0.5;
+	}
 }
 @media screen and (width >= $ipad) and (width < $desktop) {
 	.click-area {
@@ -247,7 +250,7 @@ export default {
 		}
 		&__message_desktop {
 			display: none;
-		}
+		} 
 	}
 	.information-drop-item {
 		&__title {
