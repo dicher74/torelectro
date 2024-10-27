@@ -177,6 +177,7 @@ export default {
 		margin-bottom: 5px;
 		box-sizing: border-box;
 		&__title {
+			box-sizing: border-box;
 			font-size: 18px;
 			line-height: 19.8px;
 			height: 30px;

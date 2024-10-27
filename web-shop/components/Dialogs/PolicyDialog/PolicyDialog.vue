@@ -318,6 +318,8 @@ export default {
 			line-height: 8.8px;
 		}
 		&__title {
+			box-sizing: border-box;
+			padding-top: 4px;
 			font-size: 18px;
 			line-height: 19.8px;
 			height: 30px;

@@ -114,6 +114,8 @@ export default {
 	}
 	.vacansion-dialog {
 		&__title {
+			padding-top: 4px;
+			box-sizing: border-box;
 			font-size: 18px;
 			line-height: 19.8px;
 			height: 30px;
@@ -132,6 +134,9 @@ export default {
 			height: 75px;
 			border-radius: 5px;
 			background-color: rgba(255, 61, 0, 0.25);
+		}
+		&__right {
+			gap: 15px;
 		}
 	}
 }

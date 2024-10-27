@@ -91,17 +91,21 @@
 }
 
 @media screen and (width < $ipad) {
+	.documentation-dialog {
+		&__title {
+			box-sizing: border-box;
+			padding-top: 4px;
+			font-size: 18px;
+			line-height: 19.8px;
+			height: 30px;
+		}
+	}
 	.load-area-item {
 		&__block_size {
 			display: none;
 		}
 		&__block_format {
 			display: none;
-		}
-		&__title {
-			font-size: 18px;
-			line-height: 19.8px;
-			height: 30px;
 		}
 	}
 	.load-area {

@@ -69,6 +69,7 @@ export default {
 		&__block {
 			font-size: 14px;
 			line-height: 15.4px;
+			padding: 15px 10px;
 		}
 	}
 }
