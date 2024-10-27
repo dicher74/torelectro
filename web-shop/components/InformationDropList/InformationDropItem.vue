@@ -110,6 +110,7 @@ export default {
 		height: 30px;
 		margin-top: -5px;
 		cursor: pointer;
+		pointer-events: none;
 	}
 	&__show-button_show-true {
 		transform: rotate(45deg);

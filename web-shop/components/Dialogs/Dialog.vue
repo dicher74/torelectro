@@ -74,6 +74,8 @@ export default {
 }
 
 .dialog-window__close {
+	width: 24.38px;
+	height: 24.38px;
 	cursor: pointer;
 	opacity: 0.25;
 	transition: opacity 0.3s;
