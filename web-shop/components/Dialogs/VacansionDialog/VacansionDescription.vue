@@ -62,4 +62,14 @@ export default {
 		width: 410px;
 	}
 }
+
+@media screen and (width < $ipad) {
+	.vacansion-description {
+		width: 320px;
+		&__block {
+			font-size: 14px;
+			line-height: 15.4px;
+		}
+	}
+}
 </style>

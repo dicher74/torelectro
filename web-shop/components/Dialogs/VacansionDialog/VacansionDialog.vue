@@ -1,11 +1,15 @@
 <template>
 	<div class="vacansion-dialog">
-		<div class="vacansion-dialog__title">Вакансия для амбициозных, сильных и коммуникабельных</div>
+		<div class="vacansion-dialog__title vacansion-dialog__title_desktop">
+			Вакансия для амбициозных, сильных и коммуникабельных</div>
+		<div class="vacansion-dialog__title vacansion-dialog__title_phone">Вакансия </div>
 		<div class="vacansion-dialog__body">
 			<div class="dialog-body__right">
+				<div class="dialog-body__empty"></div>
 				<VacansionDescription />
 				<ButtonsOrangeButton class="button_desktop" :width="360" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
 				<ButtonsOrangeButton class="button_ipad" :width="410" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
+				<ButtonsOrangeButton class="button_phone" :width="320" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
 				<div class="button-area__policy-text policy-text">
 					<p class="policy-text__par_top"> нажимая, вы соглашаетесь </p>
 					<a class="policy-text__policy-link"> с условиями политики конфиденциальности </a>
@@ -47,16 +51,25 @@ export default {
 		align-items: center;
 	}
 
+	&__title_phone {
+		display: none;
+	}
+
 	&__body {
 		display: inline-flex;
 		justify-content: flex-end;
 	}
 }
 
-.dialog-body__right {
-	display: inline-flex;
-	flex-direction: column;
-	gap: 20px;
+.dialog-body {
+	&__right {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	&__empty {
+		display: none;
+	}
 }
 
 .policy-text {
@@ -79,6 +92,9 @@ export default {
 .button_ipad {
 	display: none;
 }
+.button_phone {
+	display: none;
+}
 
 @media screen and (width >= $ipad) and (width < $desktop) {
 	.button_ipad {
@@ -86,6 +102,37 @@ export default {
 	}
 	.button_desktop {
 		display: none;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.button_desktop {
+		display: none;
+	}
+	.button_phone {
+		display: flex;
+	}
+	.vacansion-dialog {
+		&__title {
+			font-size: 18px;
+			line-height: 19.8px;
+			height: 30px;
+		}
+		&__title_phone {
+			display: flex;
+		}
+		&__title_desktop {
+			display: none;
+		}
+	}
+	.dialog-body {
+		&__empty {
+			display: block;
+			width: 320px;
+			height: 75px;
+			border-radius: 5px;
+			background-color: rgba(255, 61, 0, 0.25);
+		}
 	}
 }
 </style>
