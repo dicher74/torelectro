@@ -11,8 +11,11 @@
 					{{ descriptionPar }}
 				</p>
 				<a v-if="theme === 'black'" href="https://t.me/humanfromthefuture" target="_blank" >
-					<p class="information-drop-item__message">
+					<p class="information-drop-item__message information-drop-item__message_desktop">
 						Написать нам в мессенджер «Telegram»
+					</p>
+					<p class="information-drop-item__message information-drop-item__message_phone">
+						Написать нам в мессенджер 
 					</p>
 				</a>
 			</div>
@@ -128,6 +131,9 @@ export default {
 		line-height: 17.6px;
 		transition: all 0.3s;
 	}
+	&__message_phone {
+		display: none;
+	}
 }
 
 .information-drop-item__title {
@@ -223,11 +229,24 @@ export default {
 		&__show-button {
 			margin-top: 0;
 		}
+		&__description-par {
+			line-height: 17.6px;
+		}
 		&__content-separator_theme-white {
 			width: 335px;
 		}
 		&__content-separator_theme-black {
 			width: 335px;
+		}
+		&__message {
+			font-size: 14px;
+			line-height: 15.4px;
+		}
+		&__message_phone {
+			display: block;
+		}
+		&__message_desktop {
+			display: none;
 		}
 	}
 	.information-drop-item {

@@ -139,5 +139,8 @@ export default {
 			gap: 15px;
 		}
 	}
+	.policy-text {
+		margin-bottom: 5px;
+	}
 }
 </style>

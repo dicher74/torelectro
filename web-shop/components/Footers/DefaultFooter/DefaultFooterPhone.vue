@@ -167,7 +167,7 @@ export default {
 			position: static;
 			display: inline-flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 24px;
 		}
 	}
 	.telegram-icon {

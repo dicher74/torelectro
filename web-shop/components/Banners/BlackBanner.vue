@@ -13,6 +13,10 @@
 				:text="buttonText"
 				class="black-banner__button black-banner__button_phone" 
 				@click="activated" />
+			<div class="black-banner__disclaimer">
+				{{`подробная презентация предоставляется 
+				исключительно на основании запроса`}}
+			</div>
 		</div>
 	</section>
 </template>
@@ -75,6 +79,10 @@ export default {
 	&__button_phone {
 		display: none;
 	}
+
+	&__disclaimer {
+		display: none;
+	}
 }
 
 @media screen and (width < $ipad) {
@@ -88,6 +96,16 @@ export default {
 		}
 		&__button_phone {
 			display: block;
+		}
+
+		&__disclaimer {
+			display: flex;
+			height: 30px;
+			width: 350px;
+			font-size: 14px;
+			line-height: 15.4px;
+			text-align: center;
+			color: rgba(80, 80, 80, 1);
 		}
 	}
 }

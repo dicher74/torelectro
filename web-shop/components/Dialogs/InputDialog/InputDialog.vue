@@ -181,9 +181,13 @@ export default {
 		&__button_phone {
 			display: flex;
 		}
+		&__button-area {
+			gap: 15px;
+		}
 	}
 	.policy-text {
 		width: 320px;
+		margin-bottom: 5px;
 	}
 	.input-area {
 		&__input-wrapper {

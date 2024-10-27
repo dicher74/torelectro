@@ -1,6 +1,7 @@
 <template>
 	<section class="interesting-nuansions-area">
-		<DefaultSectionHeader style="height: 40px;" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которые важно знать вашим клиентам"/>
+		<DefaultSectionHeader class="interesting-nuansions-header_desktop" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которые важно знать вашим клиентам"/>
+		<DefaultSectionHeader class="interesting-nuansions-header_phone" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которыми интересуются ваши клиенты"/>
 		<InformationDropList :items="items" theme="black" />
 	</section>
 </template>
@@ -163,7 +164,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .interesting-nuansions-area {
 	width: 100%;
 	margin-top: 100px;
@@ -171,5 +172,26 @@ export default {
 	display: inline-flex;
 	flex-direction: column;
 	gap: 20px;
+}
+
+.interesting-nuansions-header {
+	&_desktop {
+		height: 40px;
+	}
+	&_phone {
+		display: none;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.interesting-nuansions-header {
+		&_desktop {
+			display: none;
+		}
+		&_phone {
+			display: flex;
+			height: 50px;
+		}
+	}
 }
 </style>
