@@ -126,6 +126,7 @@ export default {
 		font-size: 16px;
 		color: #FF3D00;
 		line-height: 17.6px;
+		transition: all 0.3s;
 	}
 }
 
@@ -189,6 +190,12 @@ export default {
 	}
 	to {
 		transform: rotate(0deg);
+	}
+}
+
+@media  screen and (hover: hover) {
+	.information-drop-item__message:hover {
+		opacity: 0.5;
 	}
 }
 @media screen and (width >= $ipad) and (width < $desktop) {

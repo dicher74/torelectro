@@ -20,6 +20,16 @@
 			class="information-drop-item information-drop-item_desktop"
 			@choose="choose(item.title.desktop)"
 			/>
+		<InformationDropItem 
+			v-for="item, itemNum in items"
+			:key="`information-frop-list__item_num-${itemNum}_ipad`"
+			:title="item.title.ipad"
+			:description="item.description.ipad"
+			:theme="theme"
+			:showMode="active === item.title.ipad"
+			class="information-drop-item information-drop-item_ipad"
+			@choose="choose(item.title.ipad)"
+			/>
 	</div>
 </template>
 
@@ -68,6 +78,9 @@ export default {
 .information-drop-item_phone {
 	display: none;
 }
+.information-drop-item_ipad {
+	display: none;
+}
 
 @media screen and (width < $ipad) {
 	.information-drop-item_phone {
@@ -75,6 +88,15 @@ export default {
 	}
 	.information-drop-item_desktop {
 		display: none;
+	}
+}
+
+@media screen and (width >= $ipad) and (width < $desktop) {
+	.information-drop-item_desktop {
+		display: none;
+	}
+	.information-drop-item_ipad {
+		display: inline-flex;
 	}
 }
 </style>
