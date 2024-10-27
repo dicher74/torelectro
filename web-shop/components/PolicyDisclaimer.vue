@@ -57,6 +57,7 @@ export default {
 	},
 	methods: {
 		showPolicyDialog() {
+			window.event.stopPropagation()
 			store.commit('changeDialogMode', { mode: ['policy'] })
 		},
 		closeDisclaimer() {
