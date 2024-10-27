@@ -51,6 +51,7 @@ import { store } from '~/store';
 export default {
 	methods: {
 		showDialog(mode) {
+			window.event.stopPropagation()
 			store.commit("changeDialogMode", { mode: mode })
 		}
 	}

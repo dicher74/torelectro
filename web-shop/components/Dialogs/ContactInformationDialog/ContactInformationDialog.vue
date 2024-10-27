@@ -14,6 +14,7 @@
 				width="320" height="470" frameborder="0"></iframe>
 			</div>
 			<div class="info-blocks">
+				<div class="dialog-body__empty"></div>
 				<div class="info-blocks__block info-blocks__block_num-1">
 					<p class="info-block__line"> +7 495 198 62 55 </p>
 					<p class="info-block__line"> +7 916 083 39 30 </p>
@@ -58,6 +59,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dialog-body__empty {
+	display: none;
+}
 .telegram-icon {
 	margin-top: auto;
 	align-self: center;
@@ -155,6 +159,51 @@ export default {
 	}
 	.map-container_desktop {
 		display: none;
+	}
+}
+
+@media screen and (width < $ipad) {
+	.dialog-body__empty {
+		display: block;
+		width: 320px;
+		height: 75px;
+		border-radius: 5px;
+		background-color: rgba(255, 61, 0, 0.25);
+	}
+	.telegram-icon {
+		margin-top: 95px;
+	}
+	.contact-info-dialog {
+		margin-bottom: 5px;
+		box-sizing: border-box;
+		&__title {
+			font-size: 18px;
+			line-height: 19.8px;
+			height: 30px;
+			padding-top: 4px;
+		}
+	}
+	.map-container {
+		&_desktop {
+			display: none;
+		}
+	}
+	.info-blocks {
+		&__block {
+			width: 320px;
+		}
+	}
+	.info-blocks__block_num-1 {
+		.info-block__line {
+			font-size: 16px;
+			line-height: 17.6px;
+		}
+	}
+	.info-blocks__block_num-2 {
+		.info-block__line {
+			font-size: 14px;
+			line-height: 15.4px;
+		}
 	}
 }
 </style>
