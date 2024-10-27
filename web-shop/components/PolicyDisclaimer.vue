@@ -91,12 +91,18 @@ export default {
 	&__body_ipad {
 		display: none;
 	}
+	&__body_phone {
+		display: none;
+	}
 	&__button-area {
 		display: inline-flex;
 		align-items: center;
 		gap: 23.92px;
 	}
 	&__button-area_ipad {
+		display: none;
+	}
+	&__button-area_phone {
 		display: none;
 	}
 	&__close-button {
@@ -130,10 +136,16 @@ export default {
 		&__body_desktop {
 			display: none;
 		}
+		&__body_phone {
+			display: none;
+		}
 		&__button-area_ipad {
 			display: inline-flex;
 		}
 		&__button-area_desktop {
+			display: none;
+		}
+		&__button-area_phone {
 			display: none;
 		}
 	}
