@@ -50,7 +50,7 @@ export default {
 
 @media screen and (width < $ipad) {
 	.information-card {
-		padding: 15px;
+		padding: 15px 15px 20px 15px;
 		height: 310px;
 		justify-content: space-between;
 		&__description {

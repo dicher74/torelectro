@@ -1,8 +1,9 @@
 <template>
 	<BlackBanner 
 		:buttonText="buttonText" 
-		:description="description" 
-		style="margin-top: 100px;"
+		:description="description"
+		class="consultation-black-banner" 
+		style=""
 		@activated="showConsultationDialog"/>
 </template>
 
@@ -31,3 +32,15 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+.consultation-black-banner {
+	margin-top: 100px;
+}
+
+@media screen and (width < $ipad) {
+	.consultation-black-banner {
+		margin-top: 100px;
+	}
+}
+</style>
