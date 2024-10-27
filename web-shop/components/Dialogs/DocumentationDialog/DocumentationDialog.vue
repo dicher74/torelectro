@@ -89,4 +89,25 @@
 		}
 	}
 }
+
+@media screen and (width < $ipad) {
+	.load-area-item {
+		&__block_size {
+			display: none;
+		}
+		&__block_format {
+			display: none;
+		}
+		&__title {
+			font-size: 18px;
+			line-height: 19.8px;
+			height: 30px;
+		}
+	}
+	.load-area {
+		&__item {
+			grid-template-columns: 265px 50px;
+		}
+	}
+}
 </style>
