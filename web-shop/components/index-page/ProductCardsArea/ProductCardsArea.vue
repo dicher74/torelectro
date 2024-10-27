@@ -3,7 +3,7 @@
 		<DefaultSectionHeader :text="title"class="product-cards__title"/>
 		<Filters @scrollNext="scrollNext" @changeFilter="changeFilter"/>
 		<ProductCards :firstCard="firstCard" @updateFirst="updateFirst"/>
-		<ScrollProgress :choosed="firstCard" :cards-amount="cardsAmount"/>
+		<ScrollProgress :choosed="progressCard" :cards-amount="cardsAmount"/>
 	</section>
 </template>
 
@@ -26,6 +26,7 @@ export default {
 		return {
 			title: "Каталог со всеми категориями нашего ассортимента",
 			firstCard: 0,
+			progressCard: 0,
 		}
 	},
 	computed: {
@@ -47,13 +48,15 @@ export default {
 				cards = store.state.productCards.filter((elem) => elem.category === filterName)
 			}
 			this.firstCard = (this.firstCard + 1) % cards.length
+			this.progressCard =  this.firstCard
 		},
 		changeFilter() {
 			this.firstCard = 0
+			this.progressCard = 0
 		},
 		updateFirst(index) {
-			this.firstCard = index
-			console.log('update first!')
+			this.progressCard = index
+			console.log('update first! ', index)
 		}
 	},
 }

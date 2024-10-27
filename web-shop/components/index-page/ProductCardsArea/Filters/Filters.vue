@@ -76,7 +76,7 @@ export default {
 	}
 }
 
-@media screen and (width < $ipad) {
+@media screen and (width < $desktop) {
 	.filter-toolbar__scroll-arrow {
 		display: none;
 	};

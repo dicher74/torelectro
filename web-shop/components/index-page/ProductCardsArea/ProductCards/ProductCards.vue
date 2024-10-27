@@ -39,16 +39,49 @@ export default {
 		},
 		currentCards() {
 			return this.cards
+		},
+		swipeEnd() {
+			const containerLeft = document.querySelector('.filter-button').getBoundingClientRect().left
+			let index = 0
+			for (const card of document.querySelectorAll('.product-card')) {
+				if (Math.abs(card.getBoundingClientRect().left - containerLeft) < 10) {
+					this.$emit('setFirst', index)
+				}
+				index++
+			}
+			console.log('end swipe!')
+		}
+	},
+	mounted() {
+		const updateFirst = function() {
+			console.log('swipe -- !')
+			setTimeout(function() {
+				let index = 0
+				const containerLeft = document.querySelector('.filter-button').getBoundingClientRect().left
+				console.log('container-left: ', containerLeft)
+				for (const card of document.querySelectorAll('.product-card')) {
+					if (Math.abs(card.getBoundingClientRect().left - containerLeft) < 1) {
+						console.log(index)
+						this.$emit('updateFirst', index)
+					}
+					index++
+				}
+			}.bind(this), 900)
+			
+		}
+		console.log(document.querySelector('.filter-toolbar__scroll-arrow').style.display)
+		if (document.querySelector('.filter-toolbar__scroll-arrow').style.display === '') {
+			document.addEventListener('pointercancel', updateFirst.bind(this))
+			document.addEventListener('pointerup', updateFirst.bind(this))
 		}
 	}
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .product-cards {
 	width: 100%;
 	overflow: scroll;
-	scroll-snap-type: x mandatory;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
@@ -61,13 +94,13 @@ export default {
 	transition: all 1s;
 	scroll-snap-type: x mandatory;
 }
-.product-card {
-	scroll-snap-align: start;
-}
 
-@media screen and (width >= 820px) and (width <= 1280px) {
-	.product-cards__container {
+@media screen and (width < $desktop) {
+	.product-cards {
 		scroll-snap-type: x mandatory;
+	}
+	.product-card {
+		scroll-snap-align: start;
 	}
 }
 </style>

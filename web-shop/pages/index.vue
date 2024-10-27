@@ -58,7 +58,6 @@ export default {
 			}
 			console.log(event.target.classList)
 			if (!this.dialogList.length) {
-				event.stopPropagation()
 				return;
 			}
 			const dialogs = document.querySelectorAll('.dialog__window')
