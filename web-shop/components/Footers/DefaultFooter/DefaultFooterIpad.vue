@@ -7,7 +7,7 @@
 				<div class="content-column content-column_num-1">
 					<a class="content-column__item" href="#catalog"> Каталог всего ассортимента компании</a>
 					<a class="content-column__item" @click="showDialog(['presentation'])">Презентация для сотрудничества</a>
-					<a class="content-column__item" href="#questions">Популярные вопросы</a>
+					<a class="content-column__item" style="pointer-events: none;"></a>
 				</div>
 				<div class="content-column content-column_num-2">
 					<a class="content-column__item" @click="showDialog(['vacansion', 'anket'])">Вакансия</a>

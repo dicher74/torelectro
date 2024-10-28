@@ -4,7 +4,6 @@
 			<a class="select-list__tip" href="#catalog"> Каталог всего ассортимента компании </a>
 			<a class="select-list__tip" href="#presentation"> Презентация для сотрудничества</a>
 			<a class="select-list__tip" href="#information"> Информация о компании </a>
-			<a class="select-list__tip" href="#questions"> Популярные вопросы </a>
 		</div>
 		<hr class="select-list__separator"/>
 		<div class="select-list__section">
