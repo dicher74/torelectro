@@ -123,14 +123,14 @@ export default {
 		font-size: 18px;
 		line-height: 19.8px;
 		font-family: Evolventa;
-		padding-top: 3px;
+		padding-top: 2px;
 		box-sizing: border-box;
 	}
 	&__placeholder-number {
 		font-size: 18px;
 		line-height: 19.8px;
 		color: #101010;
-		margin-top: 3.9px;
+		margin-top: 2.9px;
 	}
 	&__placeholder {
 		color: rgba(144, 144, 144, 1);
