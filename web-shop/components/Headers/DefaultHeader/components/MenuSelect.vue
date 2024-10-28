@@ -73,7 +73,7 @@ export default {
 			height: 8px;
 			border-radius: 100px;
 			margin-left: -20px;
-			margin-top: 7px;
+			margin-top: 6px;
 			background-color: #FF3D00;
 			text-decoration: none;
 			position: absolute;

@@ -79,7 +79,6 @@ export default {
 	cursor: pointer;
 	opacity: 0.25;
 	transition: opacity 0.3s;
-	margin-right: 2.81px;
 }
 
 @keyframes show {
