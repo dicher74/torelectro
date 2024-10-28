@@ -1,7 +1,7 @@
 <template>
 	<section class="interesting-nuansions-area">
 		<DefaultSectionHeader class="interesting-nuansions-header_desktop" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которые важно знать вашим клиентам"/>
-		<DefaultSectionHeader class="interesting-nuansions-header_phone" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которыми интересуются ваши клиенты"/>
+		<DefaultSectionHeader class="interesting-nuansions-header_phone" text="<span style='color: #FF3D00;'>Интересные нюансы</span>, которыми <br/> интересуются ваши клиенты"/>
 		<InformationDropList :items="items" theme="black" />
 	</section>
 </template>

@@ -76,6 +76,7 @@ export default {
 @media screen and (width < $ipad) {
 	.product-cards-area {
 		margin-top: 100px;
+		
 	}
 }
 

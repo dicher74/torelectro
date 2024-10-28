@@ -1,7 +1,9 @@
 <template>
 	<section class="popular-questions-area">
-		<DefaultSectionHeader style="height: 40px;"
+		<DefaultSectionHeader class="popular-questions-header_desktop"
 		text="<span style='color: #FF3D00;'>Популярные вопросы</span>, которыми часто задаются наши клиенты"/>
+		<DefaultSectionHeader style="height: 40px;" class="popular-questions-header_phone"
+		text="<span style='color: #FF3D00;'>Популярные вопросы</span>, которыми <br/> часто задаются наши клиенты"/>
 		<InformationDropList :items="items" theme="white" />
 	</section>
 </template>
@@ -132,7 +134,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .popular-questions-area {
 	width: 100%;
 	margin-top: 100px;
@@ -140,5 +142,22 @@ export default {
 	display: inline-flex;
 	flex-direction: column;
 	gap: 20px;
+}
+
+.popular-questions-header_phone {
+	display: none;
+}
+.popular-questions-header_desktop {
+	margin-top: 40px;
+}
+
+@media screen and (width < $ipad) {
+	.popular-questions-header_phone {
+		display: inline-flex;
+		margin-top: 40px;
+	}
+	.popular-questions-header_desktop {
+		display: none;
+	}
 }
 </style>

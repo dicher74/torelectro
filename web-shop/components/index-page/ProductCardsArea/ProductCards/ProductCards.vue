@@ -97,10 +97,16 @@ export default {
 
 @media screen and (width < $desktop) {
 	.product-cards {
+		width: 100vw;
+		padding-left: calc(50vw - 50% + 20px);
+		padding-right: calc(50vw - 50% + 20px);
+		box-sizing: border-box;
 		scroll-snap-type: x mandatory;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
 	}
 	.product-card {
-		scroll-snap-align: start;
+		scroll-snap-align: center;
 	}
 }
 </style>
