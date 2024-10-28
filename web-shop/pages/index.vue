@@ -94,7 +94,7 @@ export default {
 	.page-image {
 	display: block;
 	width: 350px;
-	height: 370px;
+	height: 210px;
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 5px;
 	margin-bottom: 20px;
