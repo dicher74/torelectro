@@ -7,6 +7,12 @@
 					v-for="option, parNum in options"
 					:key="`option-par_num-${parNum}`"
 					class="card-options__option"> {{ option }} </div>
+				<div class="product-card__tags">
+					<div
+						v-for="tag, tagNum in tags"
+						:key="`tag_num-${tagNum}`"
+						class="card-tag"> {{ tag }} </div>
+				</div>
 			</div>
 		</div>
 		<div class="product-body__description">
@@ -50,6 +56,9 @@ export default {
 				length: 'от ' + this.card.length[0] + ' до ' + this.card.length[1] + ' м',
 				grounding: this.card.grounding ? 'с заземлением' : 'без заземления'
 			}
+		},
+		tags() {
+			return this.card.tags
 		}
 	},
 	methods: {
@@ -96,6 +105,25 @@ export default {
 	}
 }
 
+.product-card__tags {
+	display: inline-flex;
+	gap: 5px;
+}
+
+.card-tag {
+	display: inline-flex;
+	justify-content: center;
+	padding: 9px 11px 0px 11px;
+	height: 30px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: rgba(255, 61, 0, 0.5);
+	font-size: 14px;
+	line-height: 15.4px;
+	color: rgba(255, 255, 255, 1);
+	backdrop-filter: blur(5px);
+}
+
 .card-options {
 	display: inline-flex;
 	flex-direction: column;
@@ -107,9 +135,8 @@ export default {
 	gap: 5px;
 	&__option {
 		display: inline-flex;
-		align-items: center;
 		justify-content: center;
-		padding: 1px 11px 0px 11px;
+		padding: 8px 11px 0px 11px;
 		height: 30px;
 		box-sizing: border-box;
 		border-radius: 5px;

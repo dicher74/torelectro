@@ -81,7 +81,7 @@ export default {
 	},
 
 	mounted() {
-		//document.addEventListener('click', this.checkIfOutsideDialog)
+		document.addEventListener('click', this.checkIfOutsideDialog)
 	}
 }
 </script>

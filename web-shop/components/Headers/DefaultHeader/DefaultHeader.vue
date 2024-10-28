@@ -7,7 +7,7 @@
 				<HeaderMenu @click="changeMenuMode($event)" :show-list="menuMode"  :activated="menuMode"/>
 			</div>
 		</header>
-		<MenuSelect v-if="menuMode" style="align-self: flex-end;"/>
+		<MenuSelect v-if="menuMode" style="align-self: flex-end;" @choose="closeMenu"/>
 	</div>
 </template>
 
