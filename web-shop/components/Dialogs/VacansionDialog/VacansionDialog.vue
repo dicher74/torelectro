@@ -5,7 +5,6 @@
 		<div class="vacansion-dialog__title vacansion-dialog__title_phone">Вакансия </div>
 		<div class="vacansion-dialog__body">
 			<div class="dialog-body__right">
-				<div class="dialog-body__empty"></div>
 				<VacansionDescription />
 				<ButtonsOrangeButton class="button_desktop" :width="360" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>
 				<ButtonsOrangeButton class="button_ipad" :width="410" :height="60" text="Анкета для заполнения" @click="scrollToAnket"/>

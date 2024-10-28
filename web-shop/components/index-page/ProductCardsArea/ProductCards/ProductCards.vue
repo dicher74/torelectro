@@ -5,6 +5,7 @@
 				v-for="card, cardNum in currentCards" 
 				:key="`product-card_num-${cardNum}`"
 				:description="card" />
+			<div class="invisible-card"></div>
 		</div>
 	</div>
 </template>
@@ -28,7 +29,6 @@ export default {
 		cards() {
 			let cards = store.state.productCards
 			const filterName = store.state.filter
-			console.log('filter: ', filterName)
 			if (filterName) {
 				return cards.filter((elem) => elem.category === filterName)
 			}
@@ -40,40 +40,23 @@ export default {
 		currentCards() {
 			return this.cards
 		},
-		swipeEnd() {
-			const containerLeft = document.querySelector('.filter-button').getBoundingClientRect().left
-			let index = 0
-			for (const card of document.querySelectorAll('.product-card')) {
-				if (Math.abs(card.getBoundingClientRect().left - containerLeft) < 10) {
-					this.$emit('setFirst', index)
-				}
-				index++
-			}
-			console.log('end swipe!')
-		}
 	},
 	mounted() {
-		const updateFirst = function() {
-			console.log('swipe -- !')
-			setTimeout(function() {
+		const callback = function() {
 				let index = 0
 				const containerLeft = document.querySelector('.filter-button').getBoundingClientRect().left
-				console.log('container-left: ', containerLeft)
 				for (const card of document.querySelectorAll('.product-card')) {
-					if (Math.abs(card.getBoundingClientRect().left - containerLeft) < 1) {
-						console.log(index)
+					if (Math.abs(card.getBoundingClientRect().left - containerLeft) < 100) {
 						this.$emit('updateFirst', index)
 					}
 					index++
 				}
-			}.bind(this), 900)
-			
-		}
-		console.log(document.querySelector('.filter-toolbar__scroll-arrow').style.display)
-		if (document.querySelector('.filter-toolbar__scroll-arrow').style.display === '') {
-			document.addEventListener('pointercancel', updateFirst.bind(this))
-			document.addEventListener('pointerup', updateFirst.bind(this))
-		}
+			}
+		const targets = document.querySelectorAll('.product-card')
+		const config = { root: document.querySelector('.product-cards'), rootMargin: '-1% 0% -99% 0%', threshold: 0  };
+
+		const observer = new IntersectionObserver(callback.bind(this), config)
+		targets.forEach(target => observer.observe(target))
 	}
 }
 </script>
@@ -93,6 +76,10 @@ export default {
 	gap: 20px;
 	transition: all 1s;
 	scroll-snap-type: x mandatory;
+}
+
+.invisible-card {
+	position: absolute;
 }
 
 @media screen and (width < $desktop) {

@@ -14,7 +14,6 @@
 				width="320" height="470" frameborder="0"></iframe>
 			</div>
 			<div class="info-blocks">
-				<div class="dialog-body__empty"></div>
 				<div class="info-blocks__block info-blocks__block_num-1">
 					<p class="info-block__line"> +7 495 198 62 55 </p>
 					<p class="info-block__line"> +7 916 083 39 30 </p>
