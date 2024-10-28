@@ -43,11 +43,12 @@ export default {
 		opacity: 1;
 	}
 	&__value {
-		margin-top: 8px;
+		margin-top: 3px;
 		font-size: 16px;
 		color: #FFFFFF;
 	}
 	&__description {
+		margin-top: -2px;
 		font-size: 14px;
 		color: rgba(255, 255, 255, 0.5);
 	}
@@ -66,7 +67,7 @@ export default {
 		width: 100px;
 
 		&__value {
-			margin-top: 2px;
+			margin-top: 5px;
 			font-size: 14px;
 			line-height: 15.4px;
 		}
@@ -74,6 +75,7 @@ export default {
 		&__description {
 			font-size: 12px;
 			line-height: 13.2px;
+			margin-top: 3px;
 		}
 	}
 }

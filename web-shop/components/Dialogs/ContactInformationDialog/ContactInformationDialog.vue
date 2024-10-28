@@ -78,6 +78,7 @@ export default {
 	border-radius: 5px;
 }
 .map-container_ipad {
+	overflow: hidden;
 	display: none;
 }
 .contact-info-dialog {
@@ -117,7 +118,7 @@ export default {
 		gap: 5px;
 	}
 	&__block_num-2 {
-		gap: 10px;
+		gap: 8px;
 	}
 }
 
@@ -139,6 +140,7 @@ export default {
 	gap: 5px;
 
 	&__item {
+		height: 20px;
 		display: inline-flex;
 		justify-content: space-between;
 	}
@@ -155,6 +157,7 @@ export default {
 		overflow: hidden;
 		border-radius: 5px;
 		width: 310px;
+		height: 470px;
 		display: block;
 	}
 	.map-container_desktop {
@@ -173,6 +176,8 @@ export default {
 		width: 320px;
 		height: 75px;
 		border-radius: 5px;
+		margin-top: -5px;
+		margin-bottom: 5px;
 		background-color: rgba(255, 61, 0, 0.25);
 	}
 	.telegram-icon {
@@ -206,10 +211,16 @@ export default {
 		}
 	}
 	.info-blocks__block_num-2 {
+		padding-top: 13px;
+		box-sizing: border-box;
+		gap: 7px;
 		.info-block__line {
 			font-size: 14px;
 			line-height: 15.4px;
 		}
+	}
+	.info-block__group {
+		gap: 5px;
 	}
 }
 </style>

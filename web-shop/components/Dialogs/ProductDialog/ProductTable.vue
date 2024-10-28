@@ -140,6 +140,8 @@ export default {
 	&__item {
 		height: 50px;
 		width: 100%;
+		box-sizing: border-box;
+		padding-top: 2px;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

@@ -92,6 +92,7 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 5px;
+		margin-bottom: -2px;
 	}
 }
 
@@ -108,7 +109,7 @@ export default {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0 10px;
+		padding: 1px 11px 0px 11px;
 		height: 30px;
 		box-sizing: border-box;
 		border-radius: 5px;
@@ -116,7 +117,7 @@ export default {
 		font-size: 14px;
 		line-height: 15.4px;
 		color: rgba(255, 255, 255, 1);
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(5px);
 	} 
 }
 </style>

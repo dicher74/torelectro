@@ -115,8 +115,8 @@ export default {
 	align-items: flex-end;
 
 	&__image {
-		width: 30px;
-		height: 30px;
+		width: 27px;
+		height: 27px;
 		cursor: pointer;
 	}
 }
@@ -152,6 +152,7 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 10px;
+		margin-top: 2px;
 	}
 }
 
@@ -179,8 +180,9 @@ export default {
 	&__tag {
 		background-color: #FF3D00;
 		border-radius: 5px;
-		padding: 0px 10px;
+		padding: 2px 10px 0 10px;
 		height: 30px;
+		margin-bottom: 2px;
 		box-sizing: border-box;
 		display: inline-flex;
 		align-items: center;
@@ -189,6 +191,7 @@ export default {
 		user-select: none;
 	}
 	&__tag_quality {
+		padding-top: 1px;
 		width: 325px;
 	}
 }

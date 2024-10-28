@@ -187,6 +187,7 @@ export default {
 	}
 	.policy-text {
 		width: 320px;
+		margin-top: 3px;
 		margin-bottom: 5px;
 	}
 	.input-area {

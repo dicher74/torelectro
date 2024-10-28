@@ -98,7 +98,12 @@ export default {
 
 @media screen and (width >= $ipad) and (width < $desktop) {
 	.button_ipad {
+		margin-top: 5px;
 		display: flex;
+	}
+	.policy-text {
+		margin-top: -3px;
+		margin-bottom: 6px;
 	}
 	.button_desktop {
 		display: none;
@@ -111,6 +116,7 @@ export default {
 	}
 	.button_phone {
 		display: flex;
+		margin-top: 5px;
 	}
 	.vacansion-dialog {
 		&__title {
@@ -129,6 +135,7 @@ export default {
 	}
 	.dialog-body {
 		&__empty {
+			margin-top: -5px;
 			display: block;
 			width: 320px;
 			height: 75px;

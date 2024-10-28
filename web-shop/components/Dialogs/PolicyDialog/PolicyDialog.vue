@@ -315,7 +315,7 @@ export default {
 		&__body_phone {
 			display: block;
 			font-size: 8px;
-			line-height: 8.8px;
+			line-height: 9px;
 		}
 		&__title {
 			box-sizing: border-box;

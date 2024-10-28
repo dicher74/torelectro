@@ -106,7 +106,7 @@ export const store = createStore({
 					varieties: {
 						'2200 Вт': {id: [101, 105], radius: '2х1,0'},
 						'3500 Вт': {id: [106, 110], radius: '2х1,5'},
-						'4000 Вт': {id: [111, 115], radius: '2х1,0'},
+						'4000 Вт': {id: [111, 115], radius: '2х2,5'},
 					},
 				},
 				{

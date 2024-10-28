@@ -60,6 +60,10 @@ export default {
 @media screen and (width > $ipad) and (width <= $desktop) {
 	.vacansion-description {
 		width: 410px;
+		&__block {
+			padding-top: 13.1px;
+			padding-bottom: 13.1px;
+		}
 	}
 }
 
@@ -70,6 +74,7 @@ export default {
 			font-size: 14px;
 			line-height: 15.4px;
 			padding: 15px 10px;
+			box-sizing: border-box;
 		}
 	}
 }

@@ -74,6 +74,7 @@ export default {
 			gap: 5px;
 		}
 		&__empty {
+			margin-top: -2px;
 			height: 30px;
 			width: 180px;
 			background-color: rgba(217, 217, 217, 1);
@@ -90,11 +91,12 @@ export default {
 		display: inline-flex;
 		flex-direction: column;
 		gap: 15px;
+		padding-top: 2px;
 	}
 	&__contacts-area {
 		display: inline-flex;
 		gap: 20px;
-		margin-top: -10px;
+		margin-top: -14px;
 	}
 	&__background {
 		background-color: #101010;
@@ -109,8 +111,7 @@ export default {
 		position: absolute;
 		display: inline-flex;
 		flex-direction: column;
-		gap: 30px;
-		height: 545px;
+		gap: 33px;
 		box-sizing: border-box;
 		padding: 60px 0 50px 0;
 	}
@@ -131,7 +132,7 @@ export default {
 		line-height: 15.4px;
 		height: 45px;
 		white-space: pre-line;
-		margin-top: 50px;
+		margin-top: 46px;
 	}
 	&__extra-information {
 		display: inline-flex;

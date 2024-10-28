@@ -65,7 +65,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	gap: 5px;
+	gap: 7.81px;
 
 	opacity: 1;
     animation: show 0.8s;
@@ -79,6 +79,7 @@ export default {
 	cursor: pointer;
 	opacity: 0.25;
 	transition: opacity 0.3s;
+	margin-right: 2.81px;
 }
 
 @keyframes show {

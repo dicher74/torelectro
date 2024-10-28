@@ -177,7 +177,7 @@ export default {
 		&__button-area_phone {
 			display: inline-flex;
 			flex-direction: row;
-			gap: 20px;
+			gap: 25px;
 		}
 		&__par {
 			white-space: nowrap;

@@ -73,8 +73,8 @@ export default {
 @media screen and (width >= $ipad) and (width < $desktop) {
 	.orange-button{
 			&__text {
-				font-size: 16px;
-				line-height: 17.6px;
+				font-size: 18px;
+				line-height: 19.8px;
 			}
 		}
 }

@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<div class="load-area__item_production load-area__item load-area-item">
-				<div class="load-area-item__block load-area-item__block_name"> Сертификат на продукци. </div>
+				<div class="load-area-item__block load-area-item__block_name"> Сертификат на продукцию </div>
 				<div class="load-area-item__block load-area-item__block_size"> 0.00 МБ </div>
 				<div class="load-area-item__block load-area-item__block_format"> PDF </div>
 				<div class="load-area-item__block load-area-item__block_loader">
@@ -92,6 +92,7 @@
 
 @media screen and (width < $ipad) {
 	.documentation-dialog {
+		gap: 15px;
 		&__title {
 			box-sizing: border-box;
 			padding-top: 4px;
@@ -106,6 +107,10 @@
 		}
 		&__block_format {
 			display: none;
+		}
+		&__block_name {
+			font-size: 14px;
+			line-height: 15.4px;
 		}
 	}
 	.load-area {

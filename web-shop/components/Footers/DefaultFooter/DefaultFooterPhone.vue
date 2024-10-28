@@ -103,13 +103,16 @@ export default {
 			line-height: 15.4px;
 			white-space: wrap;
 			height: 90px;
+			margin-top: -4.8px;
 		}
 		&__extra-information {
+			margin-top: 5px;
 			display: inline-flex;
 			flex-direction: column;
 			gap: 20px;
 		}
 		&__map-area {
+			margin-top: -5px;
 			height: 150px;
 			background-color: #F0F0F0;
 			border-radius: 5px;
@@ -168,6 +171,9 @@ export default {
 			display: inline-flex;
 			flex-direction: column;
 			gap: 24px;
+		}
+		&_num-1 {
+			padding-top: 2px;
 		}
 	}
 	.telegram-icon {
