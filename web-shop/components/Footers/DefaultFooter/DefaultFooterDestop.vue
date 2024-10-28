@@ -5,7 +5,7 @@
 			<div class="default-footer__empty-zone"></div>
 			<div class="default-footer__content">
 				<div class="content-column content-column_num-1">
-					<a class="content-column__item" href="#catalog"> Каталог всего ассортимента компании</a>
+					<a class="content-column__item" @click="scrollTo('catalog')"> Каталог всего ассортимента компании</a>
 					<a class="content-column__item" @click="showDialog(['presentation'])">Презентация для сотрудничества</a>
 					<a class="content-column__item" style="pointer-events: none;"></a>
 				</div>
@@ -51,6 +51,10 @@ export default {
 		showDialog(mode) {
 			window.event.stopPropagation()
 			store.commit("changeDialogMode", { mode: mode })
+		},
+		scrollTo(elemId) {
+			window.event.stopPropagation()
+			store.commit("scrollToElem", elemId)
 		}
 	}
 }

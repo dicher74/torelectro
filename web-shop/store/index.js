@@ -55,15 +55,16 @@ export const store = createStore({
 			const scrollAnimation = setInterval(
 				() => {
 					const diff = document.getElementById(id).getBoundingClientRect().top
-					if (Math.abs(diff) < 200) {
+					if (60 <= diff && diff <= 120) {
+						console.log('clear scroll')
 						clearInterval(scrollAnimation)
 					}
 					let scrollDiff
-					if (diff < 0) {
-						scrollDiff = -60
+					if (diff < 60) {
+						scrollDiff = -1 * Math.min(60, 60 - diff)
 					}
 					else {
-						scrollDiff = 60
+						scrollDiff = Math.min(60, diff-60)
 					}
 					window.scrollTo(0, window.scrollY + scrollDiff)
 				}, 15)

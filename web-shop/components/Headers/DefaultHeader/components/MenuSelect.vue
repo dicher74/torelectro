@@ -1,9 +1,9 @@
 <template>
 	<nav class="select-list">
 		<div class="select-list__section">
-			<a class="select-list__tip" href="#catalog"> Каталог всего ассортимента компании </a>
-			<a class="select-list__tip" href="#presentation"> Презентация для сотрудничества</a>
-			<a class="select-list__tip" href="#information"> Информация о компании </a>
+			<a class="select-list__tip" @click="scrollTo('catalog')"> Каталог всего ассортимента компании </a>
+			<a class="select-list__tip" @click="scrollTo('presentation')"> Презентация для сотрудничества</a>
+			<a class="select-list__tip" @click="scrollTo('information')"> Информация о компании </a>
 		</div>
 		<hr class="select-list__separator"/>
 		<div class="select-list__section">
@@ -25,6 +25,10 @@ export default {
 		showContactsDialog() {
 			window.event.stopPropagation()
 			store.commit('changeDialogMode', {mode: ['contacts']})
+		},
+		scrollTo(elemId) {
+			window.event.stopPropagation()
+			store.commit("scrollToElem", elemId)
 		}
 	}
 }

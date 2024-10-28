@@ -63,6 +63,8 @@ export default {
 		&__block {
 			padding-top: 13.1px;
 			padding-bottom: 13.1px;
+			width: 410px;
+			box-sizing: border-box;
 		}
 	}
 }
